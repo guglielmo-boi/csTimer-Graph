@@ -10,7 +10,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.guglielmoboi.cstimer_graph"
+        applicationId "com.guglielmoboi.cstimergraph"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
