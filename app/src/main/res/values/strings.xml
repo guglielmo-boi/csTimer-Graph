@@ -90,14 +90,14 @@
     <string name="license_button_text">License</string>
 
     <!-- Buttons resources -->
-    <string name="rate_app_uri">https://play.google.com/store/apps/details?id=com.guglielmoboi.cstimer_graph</string>
+    <string name="rate_app_uri">https://play.google.com/store/apps/details?id=com.guglielmoboi.cstimergraph</string>
 
     <string name="contact_us_email_address">cstimer.graph@gmail.com</string>
     <string name="contact_us_subject">csTimer Graph</string>
 
     <string name="feedback_google_form_uri">https://forms.gle/CMDYztcafs7HqQfF6</string>
 
-    <string name="source_code_github_uri">https://github.com/guglielmo-boi/csTimer_Graph/</string>
+    <string name="source_code_github_uri">https://github.com/guglielmo-boi/csTimer-Graph/</string>
 
 
     <!-- Contributors Dialog -->
