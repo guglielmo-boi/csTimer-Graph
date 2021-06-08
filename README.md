@@ -7,7 +7,7 @@
        src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
 </a>
 
-csTimer Graph is an Android application, developed by Guglielmo Boi, which lets you plot speedcubing sessions graphs. 
+csTimer Graph is an Android application, developed by Guglielmo Boi, which lets you plot speedcubing graphs. 
 
 If you would like to add a new feature or fix something, just send a pull request.  
 
