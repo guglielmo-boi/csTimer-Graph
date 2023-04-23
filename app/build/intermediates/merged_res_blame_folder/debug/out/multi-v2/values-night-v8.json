@@ -6,12 +6,12 @@
                 {
                     "source": "C:\\Users\\guglielmo\\OneDrive\\Dev\\csTimer-Graph\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
-                        "startLines": "21",
+                        "startLines": "22",
                         "startColumns": "4",
-                        "startOffsets": "1127",
-                        "endLines": "43",
+                        "startOffsets": "1129",
+                        "endLines": "44",
                         "endColumns": "12",
-                        "endOffsets": "2116"
+                        "endOffsets": "2118"
                     },
                     "to": {
                         "startLines": "27",
@@ -42,11 +42,11 @@
                 {
                     "source": "C:\\Users\\guglielmo\\OneDrive\\Dev\\csTimer-Graph\\app\\src\\main\\res\\values-night\\colors.xml",
                     "from": {
-                        "startLines": "20,43,42,33,34,36,37,35,23,25,24,26,28,30,29,31,21,41",
+                        "startLines": "21,44,43,34,35,37,38,36,24,26,25,27,29,31,30,32,22,42",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1089,2001,1956,1630,1683,1799,1849,1749,1190,1291,1238,1343,1406,1511,1456,1565,1140,1907",
+                        "startOffsets": "1091,2003,1958,1632,1685,1801,1851,1751,1192,1293,1240,1345,1408,1513,1458,1567,1142,1909",
                         "endColumns": "49,38,43,51,64,48,50,48,46,50,51,59,48,52,53,61,46,47",
-                        "endOffsets": "1134,2035,1995,1677,1743,1843,1895,1793,1232,1337,1285,1398,1450,1559,1505,1622,1182,1950"
+                        "endOffsets": "1136,2037,1997,1679,1745,1845,1897,1795,1234,1339,1287,1400,1452,1561,1507,1624,1184,1952"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
