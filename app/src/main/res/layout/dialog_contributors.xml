@@ -111,13 +111,12 @@
             android:id="@+id/stackoverflowButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
             android:backgroundTint="@color/transparent"
             android:onClick="@{() -> viewModel.onStackoverflowDeveloperButtonClicked()}"
             android:src="@drawable/img_icon_stackoverflow"
             app:layout_constraintBottom_toBottomOf="@+id/githubButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/instagramButton"
+            app:layout_constraintStart_toEndOf="@+id/githubButton"
             app:layout_constraintTop_toTopOf="@+id/githubButton"
             app:layout_constraintVertical_bias="1.0" />
 

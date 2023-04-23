@@ -30,6 +30,7 @@ import com.guglielmoboi.cstimergraph.database.session.SessionEntity
 import com.guglielmoboi.cstimergraph.solvedata.session.Session
 import com.guglielmoboi.cstimergraph.solvedata.solve.Solve
 import com.guglielmoboi.cstimergraph.solvedata.solve.compareByDate
+import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
 import com.guglielmoboi.cstimergraph.util.SessionClickMode
 import com.guglielmoboi.cstimergraph.util.converters.readTextFromUri
 import com.guglielmoboi.cstimergraph.util.converters.textToSolves
@@ -60,14 +61,18 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
     val sessionLongClicked: LiveData<Long?>
         get() = _sessionLongClicked
 
+    private val _deleteSessionsButtonClicked = MutableLiveData<Boolean>()
+    val deleteSessionsButtonClicked: LiveData<Boolean>
+        get() = _deleteSessionsButtonClicked
+
+    private val _deleteSessionsResult = MutableLiveData<DeleteSessionsResult>()
+    val deleteSessionsResult: LiveData<DeleteSessionsResult>
+        get() = _deleteSessionsResult
+
     private val _importSessionButtonClicked = MutableLiveData<Boolean>()
     val importSessionButtonClicked: LiveData<Boolean>
         get() = _importSessionButtonClicked
-
-    private val _deleteSessionButtonClicked = MutableLiveData<Boolean>()
-    val deleteSessionButtonClicked: LiveData<Boolean>
-        get() = _deleteSessionButtonClicked
-
+    
 
     companion object
     {
@@ -78,6 +83,10 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
     fun setup() {
         updateMaxIndex()
         createSessions()
+    }
+
+    fun getMutableDeleteSessionsResult(): MutableLiveData<DeleteSessionsResult> {
+        return _deleteSessionsResult
     }
 
     private fun updateMaxIndex() {
@@ -117,18 +126,22 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
         navController.navigate(action)
     }
 
-    fun selectSession(id: Long) {
+    fun selectSession(id: Long): Boolean {
         _selectedSessionsIds.value?.apply {
             if(contains(id)) {
                 remove(id)
 
                 if(isEmpty()) {
-                    onDeleteSessionsButtonClicked()
+                    _sessionClickMode.value = SessionClickMode.DETAIL
+
+                    return true
                 }
             } else {
                 add(id)
             }
         }
+
+        return false
     }
 
 
@@ -138,36 +151,47 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
         return true
     }
 
-    fun onOpenDeleteSessionsCompleted() {
+    fun onOpenDeleteSessionsModeCompleted() {
         _sessionLongClicked.value = null
     }
 
-    fun openDeleteSessions(id: Long) {
+    fun openDeleteSessionsMode(id: Long) {
         _sessionClickMode.value = SessionClickMode.DELETE
-        _selectedSessionsIds.value?.add(id)
+        _sessionClicked.value = id
     }
 
 
     fun onDeleteSessionsButtonClicked() {
-        _deleteSessionButtonClicked.value = true
+        _deleteSessionsButtonClicked.value = true
     }
 
+    fun onOpenDeleteSessionsDialogCompleted() {
+        _deleteSessionsButtonClicked.value = false
+    }
+
+
     fun onDeleteSessionsCompleted() {
-        _deleteSessionButtonClicked.value = false
+        _deleteSessionsResult.value = DeleteSessionsResult.NULL
     }
 
     fun deleteSessions(navController: NavController) {
-        if(_selectedSessionsIds.value?.isEmpty() == true) {
-            _sessionClickMode.value = SessionClickMode.DETAIL
-        } else {
-            mainScope.launch {
-                _selectedSessionsIds.value?.forEach { id ->
-                    repository.clearSession(id)
-                }
+        mainScope.launch {
+            _selectedSessionsIds.value?.forEach { id ->
+                repository.clearSession(id)
             }
 
             refreshSessions(navController)
         }
+    }
+
+
+    fun onCancelDeleteSessionsCompleted() {
+        _deleteSessionsResult.value = DeleteSessionsResult.NULL
+    }
+
+    fun cancelDeleteSessions() {
+        _selectedSessionsIds.value?.clear()
+        _sessionClickMode.value = SessionClickMode.DETAIL
     }
 
 

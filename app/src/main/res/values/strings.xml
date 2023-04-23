@@ -162,6 +162,15 @@ If not, see https://www.gnu.org/licenses/."
     <string name="license_gnu_gpl_uri">https://www.gnu.org/licenses/gpl-3.0.html</string>
 
 
+    <!-- Delete Dialog -->
+
+    <!-- Delete header -->
+    <string name="delete_header">Delete selected sessions?</string>
+
+    <!-- Delete texts -->
+    <string name="delete_button_text">Delete</string>
+    <string name="cancel_button_text">Cancel</string>
+
     <!-- Donate Fragment -->
 
     <!-- Headers texts -->

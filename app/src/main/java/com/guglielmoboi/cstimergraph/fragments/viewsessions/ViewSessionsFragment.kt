@@ -35,10 +35,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.guglielmoboi.cstimergraph.R
 import com.guglielmoboi.cstimergraph.database.repository.Repository
 import com.guglielmoboi.cstimergraph.databinding.FragmentViewSessionsBinding
+import com.guglielmoboi.cstimergraph.dialogs.deletesessions.DeleteSessionsDialog
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.SessionAdapter
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.sessionlistener.SessionClickListener
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.sessionlistener.SessionListener
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.sessionlistener.SessionLongClickListener
+import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
 import com.guglielmoboi.cstimergraph.util.SessionClickMode
 
 class ViewSessionsFragment : Fragment()
@@ -51,6 +53,8 @@ class ViewSessionsFragment : Fragment()
     private lateinit var viewModelFactory: ViewSessionsViewModelFactory
 
     private lateinit var binding: FragmentViewSessionsBinding
+
+    private lateinit var deleteSessionsDialog: DeleteSessionsDialog
 
     private lateinit var navController: NavController
 
@@ -72,6 +76,8 @@ class ViewSessionsFragment : Fragment()
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_view_sessions, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        deleteSessionsDialog = DeleteSessionsDialog(viewModel.getMutableDeleteSessionsResult())
 
         navController = this.findNavController()
 
@@ -110,7 +116,9 @@ class ViewSessionsFragment : Fragment()
                     }
 
                     SessionClickMode.DELETE -> {
-                        viewModel.selectSession(it)
+                        if(viewModel.selectSession(it)) { // return true if selectedSessionsIds isEmpty()
+                            binding.deleteSessionsButton.visibility = View.GONE
+                        }
                         viewModel.onSelectSessionCompleted()
                     }
 
@@ -122,8 +130,34 @@ class ViewSessionsFragment : Fragment()
         viewModel.sessionLongClicked.observe(viewLifecycleOwner) {
             it?.let {
                 binding.deleteSessionsButton.visibility = View.VISIBLE
-                viewModel.openDeleteSessions(it)
-                viewModel.onOpenDeleteSessionsCompleted()
+                viewModel.openDeleteSessionsMode(it)
+                viewModel.onOpenDeleteSessionsModeCompleted()
+            }
+        }
+
+        viewModel.deleteSessionsButtonClicked.observe(viewLifecycleOwner) {
+            if(it) {
+                binding.deleteSessionsButton.visibility = View.GONE
+                deleteSessionsDialog.show(childFragmentManager, DeleteSessionsDialog.TAG)
+                viewModel.onOpenDeleteSessionsDialogCompleted()
+            }
+        }
+
+        viewModel.deleteSessionsResult.observe(viewLifecycleOwner) {
+            it?.let {
+                when(viewModel.deleteSessionsResult.value) {
+                    DeleteSessionsResult.DELETE -> {
+                        viewModel.deleteSessions(navController)
+                        viewModel.onDeleteSessionsCompleted()
+                    }
+
+                    DeleteSessionsResult.CANCEL -> {
+                        viewModel.cancelDeleteSessions()
+                        viewModel.onCancelDeleteSessionsCompleted()
+                    }
+
+                    else -> { }
+                }
             }
         }
 
@@ -131,14 +165,6 @@ class ViewSessionsFragment : Fragment()
             if(it) {
                 viewModel.importSession(importSessionResultLauncher)
                 viewModel.onImportSessionCompleted()
-            }
-        }
-
-        viewModel.deleteSessionButtonClicked.observe(viewLifecycleOwner) {
-            if(it) {
-                viewModel.deleteSessions(navController)
-                viewModel.onDeleteSessionsCompleted()
-                binding.deleteSessionsButton.visibility = View.GONE
             }
         }
 
