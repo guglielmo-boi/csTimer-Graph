@@ -144,20 +144,18 @@ class ViewSessionsFragment : Fragment()
         }
 
         viewModel.deleteSessionsResult.observe(viewLifecycleOwner) {
-            it?.let {
-                when(viewModel.deleteSessionsResult.value) {
-                    DeleteSessionsResult.DELETE -> {
-                        viewModel.deleteSessions(navController)
-                        viewModel.onDeleteSessionsCompleted()
-                    }
-
-                    DeleteSessionsResult.CANCEL -> {
-                        viewModel.cancelDeleteSessions()
-                        viewModel.onCancelDeleteSessionsCompleted()
-                    }
-
-                    else -> { }
+            when(it) {
+                DeleteSessionsResult.DELETE -> {
+                    viewModel.deleteSessions(navController)
+                    viewModel.onDeleteSessionsCompleted()
                 }
+
+                DeleteSessionsResult.CANCEL -> {
+                    viewModel.cancelDeleteSessions()
+                    viewModel.onCancelDeleteSessionsCompleted()
+                }
+
+                else -> { }
             }
         }
 
