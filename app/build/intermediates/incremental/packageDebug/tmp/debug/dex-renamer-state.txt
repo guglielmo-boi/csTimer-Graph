@@ -1,4 +1,4 @@
-#Sun Apr 23 05:41:49 CEST 2023
+#Sun Apr 23 06:16:03 CEST 2023
 base.0=C\:\\Users\\guglielmo\\OneDrive\\Dev\\csTimer-Graph\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\guglielmo\\OneDrive\\Dev\\csTimer-Graph\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\guglielmo\\OneDrive\\Dev\\csTimer-Graph\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
