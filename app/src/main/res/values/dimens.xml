@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+<resources>
+
+    <!-- Text dimensions  -->
+    <dimen name="text_micro">14sp</dimen>
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_big">22sp</dimen>
+
+    <!-- Margin dimensions -->
+    <dimen name="margin_micro">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_boarder">12dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_big">24dp</dimen>
+    <dimen name="margin_giant">32dp</dimen>
+    <dimen name="margin_import_button">60dp</dimen>
+    <dimen name="margin_delete_button">140dp</dimen>
+
+    <!-- Padding dimensions -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_big">24dp</dimen>
+    <dimen name="padding_floating_buttons">80dp</dimen>
+
+    <!-- Divider dimensions -->
+    <dimen name="divider_medium">3dp</dimen>
+    <dimen name="divider_big">4dp</dimen>
+
+    <!-- Button width & height -->
+    <dimen name="button_width">90dp</dimen>
+    <dimen name="button_height">64dp</dimen>
+
+    <!-- Nav Drawer width & height -->
+    <dimen name="nav_drawer_width">250dp</dimen>
+    <dimen name="nav_header_height">192dp</dimen>
+
+    <!-- Nav View elevations -->
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="nav_view_elevation">8dp</dimen>
+
+    <!-- Import Session Fragment images width & height -->
+    <dimen name="tutorial_image_width">300dp</dimen>
+    <dimen name="tutorial_image_height">300dp</dimen>
+
+    <!-- About Fragment rate app button height -->
+    <dimen name="rate_app_button_height">40dp</dimen>
+
+    <!-- Donate Fragment logo width & height -->
+    <dimen name="logo_width">200dp</dimen>
+    <dimen name="logo_height">200dp</dimen>
+
+</resources>

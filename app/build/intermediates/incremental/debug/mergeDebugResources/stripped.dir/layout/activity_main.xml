@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+
+
+                                                              
+                                                       
+                                                   
+
+    
+
+                 
+                            
+                                                                                    
+                   
+
+           
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" android:tag="layout/activity_main_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primaryColor"
+            android:elevation="@dimen/toolbar_elevation"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:layout_constraintEnd_toEndOf="@+id/navHostFragment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!-- Navigation Drawer Layout -->
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Navigation Host Fragment -->
+                <fragment
+                    android:id="@+id/navHostFragment"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/navigation"
+                    tools:ignore="FragmentTagUsage"
+                    tools:layout="@layout/fragment_launch"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="0dp" />
+
+            </LinearLayout>
+
+            <!-- Navigation Drawer Menu -->
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navView"
+                android:layout_width="@dimen/nav_drawer_width"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@color/surfaceColor"
+                android:elevation="@dimen/nav_view_elevation"
+                app:headerLayout="@layout/header_nav_drawer"
+                app:itemBackground="@android:color/transparent"
+                app:itemIconTint="@color/selector_nav_drawer_item"
+                app:itemTextColor="@color/selector_nav_drawer_item"
+                app:menu="@menu/menu_nav_drawer" />
+
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+    </LinearLayout>
+
+         

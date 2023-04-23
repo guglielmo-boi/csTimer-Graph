@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+
+                                                              
+                                                        
+
+    
+
+                 
+                            
+                                                                                
+                   
+
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_about_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/aboutHeader"
+            style="@style/header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            android:fontFamily="More Fonts..."
+            android:text="@string/about_title"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider12"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/primaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/aboutHeader" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height"
+            android:contentDescription="@string/cstimer_graph_logo_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider12"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/medium_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+        <TextView
+            android:id="@+id/appVersion"
+            style="@style/small_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_micro"
+            android:text="@string/app_version_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/rateAppButton"
+            style="@style/about_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_boarder"
+            android:layout_marginTop="@dimen/margin_giant"
+            android:layout_marginEnd="@dimen/margin_boarder"
+            android:tag="binding_1"                                      
+            android:text="@string/rate_app_button_text"
+            android:textSize="16sp"
+            app:backgroundTint="@color/secondaryColor"
+            app:icon="@drawable/ic_rate_star"
+            app:iconGravity="start"
+            app:iconTint="@color/onSecondaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appVersion" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/contactUsButton"
+            style="@style/about_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_boarder"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_boarder"
+            android:tag="binding_2"                                        
+            android:text="@string/contact_us_button_text"
+            android:textSize="16sp"
+            app:backgroundTint="@color/secondaryColor"
+            app:icon="@drawable/ic_email"
+            app:iconGravity="start"
+            app:iconTint="@color/onSecondaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rateAppButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/feedbackButton"
+            style="@style/about_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_boarder"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:tag="binding_3"                                       
+            android:text="@string/feedback_button_text"
+            android:textSize="16sp"
+            app:backgroundTint="@color/primaryColor"
+            app:icon="@drawable/ic_feedback"
+            app:iconGravity="start"
+            app:iconTint="@color/onPrimaryColor"
+            app:layout_constraintEnd_toStartOf="@+id/contributorsButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contactUsButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/contributorsButton"
+            style="@style/about_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_boarder"
+            android:tag="binding_4"                                           
+            android:text="@string/contributors_button_text"
+            android:textSize="16sp"
+            app:backgroundTint="@color/primaryColor"
+            app:icon="@drawable/ic_about"
+            app:iconGravity="start"
+            app:iconTint="@color/onPrimaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/feedbackButton"
+            app:layout_constraintTop_toTopOf="@+id/feedbackButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sourceCodeButton"
+            style="@style/about_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_boarder"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:tag="binding_5"                                         
+            android:text="@string/source_code_button_text"
+            android:textSize="16sp"
+            app:backgroundTint="@color/primaryColor"
+            app:icon="@drawable/ic_code"
+            app:iconGravity="start"
+            app:iconTint="@color/onPrimaryColor"
+            app:layout_constraintEnd_toStartOf="@+id/licenseButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/licenseButton"
+            style="@style/about_button"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_boarder"
+            android:tag="binding_6"                                      
+            android:text="@string/license_button_text"
+            android:textSize="16sp"
+            app:backgroundTint="@color/primaryColor"
+            app:icon="@drawable/ic_copyright"
+            app:iconGravity="start"
+            app:iconTint="@color/onPrimaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sourceCodeButton"
+            app:layout_constraintTop_toTopOf="@+id/sourceCodeButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         

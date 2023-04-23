@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.guglielmoboi.cstimergraph.app-mergeDebugResources-68:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\guglielmo\\.gradle\\caches\\transforms-3\\7ff751b7c944381d4cabf8d18e05acd7\\transformed\\core-1.8.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\guglielmo\\.gradle\\caches\\transforms-3\\95f73f8a500578be59907231099c20cb\\transformed\\appcompat-1.5.0\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}

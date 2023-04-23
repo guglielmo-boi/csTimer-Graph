@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+
+
+                                                              
+                                                        
+
+    
+
+                 
+                            
+                                                                                      
+                   
+
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:tag="layout/fragment_settings_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/primaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsHeader" />
+
+        <TextView
+            android:id="@+id/settingsHeader"
+            style="@style/header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            android:text="@string/settings_title"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider11"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_medium"
+            android:layout_marginTop="@dimen/margin_big"
+            android:background="@color/secondaryTransparentColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider4" />
+
+        <TextView
+            android:id="@+id/darkThemeHeader"
+            style="@style/medium_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/dark_theme_header"
+            app:layout_constraintStart_toEndOf="@+id/darkThemeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/divider11" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/darkThemeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_boarder"
+            android:minHeight="48dp"
+            android:tag="binding_1"                                        
+            app:layout_constraintBottom_toBottomOf="@+id/darkThemeHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/darkThemeHeader"
+            app:thumbTint="@color/selector_dark_mode_switch_thumb"
+            app:trackTint="@color/selector_dark_mode_switch_track" />
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@color/secondaryTransparentColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/darkThemeHeader" />
+
+        <ImageView
+            android:id="@+id/darkThemeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_boarder"
+            android:contentDescription="@string/dark_theme_icon_description"
+            app:layout_constraintBottom_toBottomOf="@+id/darkThemeHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/darkThemeHeader"
+            app:srcCompat="@drawable/ic_dark_mode" />
+
+        <TextView
+            android:id="@+id/launchScreenHeader"
+            style="@style/medium_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/launch_screen_header"
+            app:layout_constraintStart_toEndOf="@+id/homeIcon"
+            app:layout_constraintTop_toBottomOf="@+id/divider5" />
+
+        <View
+            android:id="@+id/divider6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@color/secondaryTransparentColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/launchScreenHeader" />
+
+        <Spinner
+            android:id="@+id/launchScreenSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:entries="@array/launch_screen_items"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="@+id/launchScreenHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/launchScreenHeader" />
+
+        <ImageView
+            android:id="@+id/homeIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_boarder"
+            android:contentDescription="@string/dark_theme_icon_description"
+            app:layout_constraintBottom_toBottomOf="@+id/launchScreenHeader"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/launchScreenHeader"
+            app:srcCompat="@drawable/ic_home" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

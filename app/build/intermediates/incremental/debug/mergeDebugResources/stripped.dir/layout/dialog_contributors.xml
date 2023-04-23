@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+
+
+                                                              
+                                                        
+
+    
+
+                 
+                            
+                                                                                            
+                   
+
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_surface_color" android:tag="layout/dialog_contributors_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/contributorsHeader"
+            style="@style/header_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/contributors_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/developerIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:contentDescription="@string/developer_icon_description"
+            app:layout_constraintBottom_toBottomOf="@+id/developerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/developerName"
+            app:srcCompat="@drawable/ic_developer"
+            app:tint="@color/onSurfaceColor" />
+
+        <TextView
+            android:id="@+id/developerName"
+            style="@style/medium_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_giant"
+            android:text="@string/developer_name"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/developerIcon"
+            app:layout_constraintTop_toBottomOf="@+id/contributorsHeader" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/emailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_micro"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/img_icon_email"
+            android:tint="@color/onBackgroundColor"
+            android:tag="binding_1"                                             
+            app:layout_constraintBottom_toBottomOf="@+id/developerName"
+            app:layout_constraintStart_toEndOf="@+id/developerName"
+            app:layout_constraintTop_toTopOf="@+id/developerName" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/instagramButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/img_icon_instagram"
+            android:tag="binding_2"                                                 
+            app:layout_constraintBottom_toBottomOf="@+id/emailButton"
+            app:layout_constraintStart_toEndOf="@+id/emailButton"
+            app:layout_constraintTop_toTopOf="@+id/emailButton" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/githubButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:tag="binding_3"                                              
+            android:src="@drawable/img_icon_github"
+            android:tint="@color/onBackgroundColor"
+            app:layout_constraintBottom_toBottomOf="@+id/instagramButton"
+            app:layout_constraintStart_toEndOf="@+id/instagramButton"
+            app:layout_constraintTop_toTopOf="@+id/instagramButton" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/stackoverflowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:backgroundTint="@color/transparent"
+            android:tag="binding_4"                                                     
+            android:src="@drawable/img_icon_stackoverflow"
+            app:layout_constraintBottom_toBottomOf="@+id/githubButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/instagramButton"
+            app:layout_constraintTop_toTopOf="@+id/githubButton"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/designerIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:contentDescription="@string/designer_icon_description"
+            app:layout_constraintBottom_toBottomOf="@+id/designerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/designerName"
+            app:srcCompat="@drawable/ic_designer"
+            app:tint="@color/onSurfaceColor" />
+
+        <TextView
+            android:id="@+id/designerName"
+            style="@style/medium_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:text="@string/designer_name"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/emailButton2"
+            app:layout_constraintStart_toEndOf="@+id/designerIcon"
+            app:layout_constraintTop_toTopOf="@+id/emailButton2" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/emailButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_micro"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:backgroundTint="@color/transparent"
+            android:tag="binding_5"                                            
+            android:src="@drawable/img_icon_email"
+            android:tint="@color/onBackgroundColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/designerName"
+            app:layout_constraintTop_toBottomOf="@+id/emailButton" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/instagramButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparent"
+            android:tag="binding_6"                                                
+            android:src="@drawable/img_icon_instagram"
+            app:layout_constraintBottom_toBottomOf="@+id/emailButton2"
+            app:layout_constraintStart_toEndOf="@+id/emailButton2"
+            app:layout_constraintTop_toTopOf="@+id/emailButton2"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

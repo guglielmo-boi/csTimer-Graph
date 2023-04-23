@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+
+
+                                                              
+                                                       
+                                                   
+
+    
+
+                 
+                          
+                                                                           
+                   
+
+                 
+                                  
+                                                                                                                       
+                   
+
+           
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/padding_big" android:tag="layout/list_item_session_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="binding_1"                                                         
+                                                                                                            
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/padding_small">
+
+                <TextView
+                    android:id="@+id/sessionName"
+                    style="@style/medium_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:tag="binding_2"     
+                    tools:text="sessionName" />
+
+                <TextView
+                    android:id="@+id/sessionStartDateTime"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sessionName"
+                    android:tag="binding_3"              
+                    tools:text="startDateTime" />
+
+                <TextView
+                    android:id="@+id/sessionEndDateTime"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_micro"
+                    app:layout_constraintStart_toEndOf="@+id/betweenDates"
+                    app:layout_constraintTop_toTopOf="@+id/sessionStartDateTime"
+                    android:tag="binding_4"            
+                    tools:text="endDateTime" />
+
+                <TextView
+                    android:id="@+id/betweenDates"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_micro"
+                    android:text="@string/hyphen"
+                    app:layout_constraintStart_toEndOf="@+id/sessionStartDateTime"
+                    app:layout_constraintTop_toTopOf="@+id/sessionStartDateTime" />
+
+                <TextView
+                    android:id="@+id/solvesCount"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/sessionEndDateTime"
+                    app:layout_constraintTop_toTopOf="@+id/sessionEndDateTime"
+                    android:tag="binding_5"            
+                    tools:text="solvesCount" />
+
+                <TextView
+                    android:id="@+id/sessionMeanHeader"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/mean"
+                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintTop_toBottomOf="@+id/sessionStartDateTime" />
+
+                <TextView
+                    android:id="@+id/mean"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    app:layout_constraintStart_toEndOf="@+id/sessionMeanHeader"
+                    app:layout_constraintTop_toTopOf="@+id/sessionMeanHeader"
+                    android:tag="binding_6"     
+                    tools:text="mean" />
+
+                <TextView
+                    android:id="@+id/bestSolveHeader"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/bestSolve"
+                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintTop_toBottomOf="@+id/mean" />
+
+                <TextView
+                    android:id="@+id/bestSolve"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/bestAvg5"
+                    app:layout_constraintTop_toTopOf="@+id/bestSolveHeader"
+                    android:tag="binding_7"              
+                    tools:text="bestSolve" />
+
+                <TextView
+                    android:id="@+id/worstSolveHeader"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/worstSolve"
+                    app:layout_constraintStart_toStartOf="@+id/WorstAvg5Header"
+                    app:layout_constraintTop_toTopOf="@+id/bestSolve" />
+
+                <TextView
+                    android:id="@+id/worstSolve"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/worstAvg5"
+                    app:layout_constraintTop_toTopOf="@+id/worstSolveHeader"
+                    android:tag="binding_8"               
+                    tools:text="worstSolve" />
+
+                <TextView
+                    android:id="@+id/bestAvg5Header"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/bestAverageFive"
+                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintTop_toBottomOf="@+id/worstSolveHeader" />
+
+                <TextView
+                    android:id="@+id/bestAvg5"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/bestAvg12"
+                    app:layout_constraintTop_toTopOf="@+id/bestAvg5Header"
+                    android:tag="binding_9"                
+                    tools:text="bestAvg5" />
+
+                <TextView
+                    android:id="@+id/WorstAvg5Header"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/worstAverageFive"
+                    app:layout_constraintStart_toStartOf="@+id/worstAvg12Header"
+                    app:layout_constraintTop_toTopOf="@+id/bestAvg5" />
+
+                <TextView
+                    android:id="@+id/worstAvg5"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@+id/worstAvg12"
+                    app:layout_constraintTop_toTopOf="@+id/WorstAvg5Header"
+                    android:tag="binding_10"                
+                    tools:text="worstAvg5" />
+
+                <TextView
+                    android:id="@+id/bestAvg12Header"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:text="@string/bestAverageTwelve"
+                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintTop_toBottomOf="@+id/WorstAvg5Header" />
+
+                <TextView
+                    android:id="@+id/bestAvg12"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    app:layout_constraintStart_toEndOf="@+id/bestAvg12Header"
+                    app:layout_constraintTop_toTopOf="@+id/bestAvg12Header"
+                    android:tag="binding_11"                 
+                    tools:text="bestAvg12" />
+
+                <TextView
+                    android:id="@+id/worstAvg12Header"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/worstAverageTwelve"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/bestAvg12"
+                    app:layout_constraintTop_toTopOf="@+id/bestAvg12" />
+
+                <TextView
+                    android:id="@+id/worstAvg12"
+                    style="@style/small_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    app:layout_constraintStart_toEndOf="@+id/worstAvg12Header"
+                    app:layout_constraintTop_toTopOf="@+id/worstAvg12Header"
+                    android:tag="binding_12"                  
+                    tools:text="worstAvg12" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+         

@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.guglielmoboi.cstimergraph.app-mergeDebugResources-68:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\guglielmo\\.gradle\\caches\\transforms-3\\95f73f8a500578be59907231099c20cb\\transformed\\appcompat-1.5.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+<navigation
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/navigation"
+    app:startDestination="@id/launchFragment">
+
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.launch.LaunchFragment"
+        android:label="fragment_launch"
+        tools:layout="@layout/fragment_launch">
+        <action
+            android:id="@+id/action_launchFragment_to_importSessionFragment"
+            app:destination="@id/importSessionFragment"
+            app:popUpTo="@id/launchFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_launchFragment_to_viewSessionsFragment"
+            app:destination="@id/viewSessionsFragment"
+            app:popUpTo="@id/launchFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_launchFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/launchFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_launchFragment_to_donateFragment"
+            app:destination="@id/donateFragment"
+            app:popUpTo="@id/launchFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_launchFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:popUpTo="@id/launchFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/importSessionFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.importsession.ImportSessionFragment"
+        android:label="fragment_import_session"
+        tools:layout="@layout/fragment_import_session" >
+        <action
+            android:id="@+id/action_importSessionFragment_to_viewSessionsFragment"
+            app:destination="@id/viewSessionsFragment"
+            app:popUpTo="@id/launchFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewSessionsFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.viewsessions.ViewSessionsFragment"
+        android:label="fragment_view_sessions"
+        tools:layout="@layout/fragment_view_sessions" >
+
+        <action
+            android:id="@+id/action_viewSessionsFragment_to_refreshSessionsFragment"
+            app:destination="@id/refreshSessionsFragment"
+            app:popUpTo="@id/viewSessionsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_viewSessionsFragment_to_detailSessionFragment"
+            app:destination="@id/detailSessionFragment"
+            app:popUpTo="@id/viewSessionsFragment"
+            app:popUpToInclusive="false" />
+        <argument
+            android:name="importSession"
+            app:argType="boolean"
+            android:defaultValue="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.about.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/donateFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.donate.DonateFragment"
+        android:label="fragment_donate"
+        tools:layout="@layout/fragment_donate" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/refreshSessionsFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.refreshsessions.RefreshSessionsFragment"
+        android:label="fragment_refresh_sessions"
+        tools:layout="@layout/fragment_refresh_sessions">
+
+        <action
+            android:id="@+id/action_refreshSessionsFragment_to_viewSessionsFragment"
+            app:destination="@id/viewSessionsFragment"
+            app:popUpTo="@id/refreshSessionsFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailSessionFragment"
+        android:name="com.guglielmoboi.cstimergraph.fragments.detailsession.DetailSessionFragment"
+        android:label="fragment_detail_session"
+        tools:layout="@layout/fragment_detail_session">
+        <argument
+            android:name="sessionId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+<menu
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/launchFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home_fragment_title"
+        android:visible="false" />
+    <item
+        android:id="@+id/importSessionFragment"
+        android:icon="@drawable/ic_upload_file"
+        android:title="@string/import_session_title" />
+
+    <item
+        android:id="@+id/viewSessionsFragment"
+        android:icon="@drawable/ic_list"
+        android:title="@string/view_sessions_title" />
+
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/ic_info"
+        android:title="@string/about_title" />
+
+    <item
+        android:id="@+id/donateFragment"
+        android:icon="@drawable/ic_gift"
+        android:title="@string/donate_title" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings_title" />
+
+</menu>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+
+
+                                                              
+                                                        
+
+    
+
+                 
+                            
+                                                                                                
+                   
+
+           
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:tag="layout/fragment_import_session_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/importHeader"
+            style="@style/header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_weight="1"
+            android:text="@string/import_session_title"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider8"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/divider_medium"
+            android:layout_marginTop="@dimen/margin_small"
+            android:background="@color/primaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/importHeader" />
+
+        <ScrollView
+            android:id="@+id/tutorialScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider8">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/tutorialLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/tutorialSubHeader0"
+                    style="@style/medium_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_boarder"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:text="@string/tutorial_subheader_0_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tutorialPcHeader"
+                    style="@style/medium_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_boarder"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:text="@string/tutorial_pc_header_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tutorialSubHeader0" />
+
+                <ImageView
+                    android:id="@+id/desktopComputerIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:contentDescription="@string/desktop_computer_icon_description"
+                    app:layout_constraintBottom_toBottomOf="@+id/tutorialPcHeader"
+                    app:layout_constraintStart_toEndOf="@+id/tutorialPcHeader"
+                    app:srcCompat="@drawable/ic_desktop_computer" />
+
+                <HorizontalScrollView
+                    android:id="@+id/tutorialPcScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tutorialPcHeader">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/tutorialPcConstraintLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/divider0"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/divider_big"
+                            android:layout_marginStart="@dimen/margin_boarder"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="@dimen/margin_boarder"
+                            android:background="@color/secondaryColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/tutorialPc0"
+                            android:layout_width="@dimen/tutorial_image_width"
+                            android:layout_height="@dimen/tutorial_image_height"
+                            android:layout_marginStart="@dimen/margin_boarder"
+                            android:contentDescription="@string/tutorial_desktop_0_description"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/divider0"
+                            app:srcCompat="@drawable/img_import_session_tutorial_desktop_0" />
+
+                        <ImageView
+                            android:id="@+id/tutorialPc1"
+                            android:layout_width="@dimen/tutorial_image_width"
+                            android:layout_height="@dimen/tutorial_image_height"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:contentDescription="@string/tutorial_desktop_1_description"
+                            app:layout_constraintStart_toEndOf="@+id/tutorialPc0"
+                            app:layout_constraintTop_toTopOf="@+id/tutorialPc0"
+                            app:srcCompat="@drawable/img_import_session_tutorial_desktop_1" />
+
+                        <ImageView
+                            android:id="@+id/tutorialPc2"
+                            android:layout_width="@dimen/tutorial_image_width"
+                            android:layout_height="@dimen/tutorial_image_height"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_marginEnd="@dimen/margin_boarder"
+                            android:contentDescription="@string/tutorial_desktop_2_description"
+                            android:visibility="visible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tutorialPc1"
+                            app:layout_constraintTop_toTopOf="@+id/tutorialPc0"
+                            app:srcCompat="@drawable/img_import_session_tutorial_desktop_2" />
+
+                        <View
+                            android:id="@+id/divider1"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/divider_big"
+                            android:layout_marginStart="@dimen/margin_boarder"
+                            android:layout_marginEnd="@dimen/margin_boarder"
+                            android:background="@color/secondaryDarkColor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tutorialMobileHeader"
+                    style="@style/medium_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_boarder"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:text="@string/tutorial_mobile_header_text"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tutorialPcScrollView" />
+
+                <ImageView
+                    android:id="@+id/mobileIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:contentDescription="@string/smartphone_icon_description"
+                    app:layout_constraintBottom_toBottomOf="@+id/tutorialMobileHeader"
+                    app:layout_constraintStart_toEndOf="@+id/tutorialMobileHeader"
+                    app:srcCompat="@drawable/ic_smartphone" />
+
+                <HorizontalScrollView
+                    android:id="@+id/tutorialMobileScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tutorialMobileHeader">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/tutorialMobileConstraintLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/divider2"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/divider_big"
+                            android:layout_marginStart="@dimen/margin_boarder"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="@dimen/margin_boarder"
+                            android:background="@color/secondaryColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/tutorialMobile0"
+                            android:layout_width="@dimen/tutorial_image_width"
+                            android:layout_height="@dimen/tutorial_image_height"
+                            android:layout_marginStart="@dimen/margin_boarder"
+                            android:contentDescription="@string/tutorial_mobile_0_description"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/divider2"
+                            app:srcCompat="@drawable/img_import_session_tutorial_mobile_0" />
+
+                        <ImageView
+                            android:id="@+id/tutorialMobile1"
+                            android:layout_width="@dimen/tutorial_image_width"
+                            android:layout_height="@dimen/tutorial_image_height"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:contentDescription="@string/tutorial_mobile_1_description"
+                            app:layout_constraintStart_toEndOf="@+id/tutorialMobile0"
+                            app:layout_constraintTop_toTopOf="@+id/tutorialMobile0"
+                            app:srcCompat="@drawable/img_import_session_tutorial_mobile_1" />
+
+                        <ImageView
+                            android:id="@+id/tutorialMobile2"
+                            android:layout_width="@dimen/tutorial_image_width"
+                            android:layout_height="@dimen/tutorial_image_height"
+                            android:layout_marginStart="@dimen/margin_medium"
+                            android:layout_marginEnd="@dimen/margin_boarder"
+                            android:contentDescription="@string/tutorial_mobile_2_description"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/tutorialMobile1"
+                            app:layout_constraintTop_toTopOf="@+id/tutorialMobile0"
+                            app:srcCompat="@drawable/img_import_session_tutorial_mobile_2" />
+
+                        <View
+                            android:id="@+id/divider3"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/divider_big"
+                            android:layout_marginStart="@dimen/margin_boarder"
+                            android:layout_marginEnd="@dimen/margin_boarder"
+                            android:background="@color/secondaryColor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tutorialMobile0" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/tutorialSubHeader1"
+                    style="@style/medium_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_boarder"
+                    android:layout_marginTop="@dimen/margin_big"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:text="@string/tutorial_subheader_1_text"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tutorialMobileScrollView" />
+
+                <ImageButton
+                    android:id="@+id/importButton"
+                    android:layout_width="@dimen/button_width"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginBottom="68dp"
+                    android:contentDescription="@string/import_button_description"
+                    android:tag="binding_1"                                     
+                    android:src="@drawable/ic_upload_file"
+                    android:background="@drawable/background_primary_color"
+                    app:tint="@color/onPrimaryColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tutorialSubHeader1"
+                    app:layout_constraintVertical_bias="0.50"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

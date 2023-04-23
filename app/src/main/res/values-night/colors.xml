@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--    This file is part of csTimer Graph.                                     -->
+<!--    Copyright © 2021-2023 Guglielmo Boi.                                    -->
+
+<!--    csTimer Graph is free software: you can redistribute it and/or modify   -->
+<!--    it under the terms of the GNU General Public License as published by    -->
+<!--    the Free Software Foundation, either version 3 of the License, or       -->
+<!--    (at your option) any later version.                                     -->
+
+<!--    csTimer Graph is distributed in the hope that it will be useful,        -->
+<!--    but WITHOUT ANY WARRANTY; without even the implied warranty of          -->
+<!--    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           -->
+<!--    GNU General Public License for more details.                            -->
+
+<!--    You should have received a copy of the GNU General Public License       -->
+<!--    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.   -->
+
+<resources>
+
+    <color name="backgroundColor">#121212</color>
+    <color name="surfaceColor">#121212</color>
+
+    <color name="primaryColor">#f9a825</color>
+    <color name="primaryLightColor">#ffd95a</color>
+    <color name="primaryDarkColor">#c17900</color>
+    <color name="primaryTransparentColor">#4DF9A825</color>
+
+    <color name="secondaryColor">#29b6f6</color>
+    <color name="secondaryLightColor">#73e8ff</color>
+    <color name="secondaryDarkColor">#0086c3</color>
+    <color name="secondaryTransparentColor">#4D29B6F6</color>
+
+    <color name="onBackgroundColor">#ffffff</color>
+    <color name="onBackgroundTransparentColor">#80FFFFFF</color>
+    <color name="onSurfaceColor">#ffffff</color>
+    <color name="onPrimaryColor">#000000</color>
+    <color name="onSecondaryColor">#000000</color>
+
+
+
+    <color name="transparent">#00000000</color>
+    <color name="lightGray">#e0e0e0</color>
+    <color name="gray">#aeaeae</color>
+
+</resources>
