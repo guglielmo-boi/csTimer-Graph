@@ -10,7 +10,7 @@
 
 csTimer Graph is a Kotlin Android application which saves speedcubing sessions data from csTimer.net and plots their graphs.
 
-# License (GNU GPL 3)
+# License (GNU GPLv3)
 
   Copyright © 2021-2023 Guglielmo Boi
 
