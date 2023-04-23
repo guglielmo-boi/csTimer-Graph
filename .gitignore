@@ -1,3 +1,8 @@
+local.properties
 .gradle/
 .idea/
 build/
+app/build/
+app/debug/
+app/libs/
+app/release/
