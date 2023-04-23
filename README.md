@@ -1,6 +1,6 @@
 # csTimer-Graph
 <p align="center">
-  <img src="https://i.imgur.com/EgE2tDm.png"/>
+  <img src="https://play-lh.googleusercontent.com/4s7zvRkpPLEPUB2W_QYzqSTGBqcwGo84kLst5skKeoAQ66-90ykoBLnB-Q77bnLun40=w240-h480-rw"/>
 </p>
 
 <a href="https://play.google.com/store/apps/details?id=com.guglielmoboi.cstimergraph" target="_blank">
@@ -10,19 +10,22 @@
 
 csTimer Graph is a Kotlin Android application which saves speedcubing sessions data from csTimer.net and plots their graphs.
 
-# License (GNU GPL v3)
+# License (GNU GPL 3)
 
-    Copyright (C) 2016  Ariovaldo Neto
+  Copyright © 2021-2023 Guglielmo Boi.
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+  csTimer Graph is free software: you can redistribute it
+  and/or modify it under the terms of the GNU General
+  Public License as published by the Free Software
+  Foundation, either version 3 of the License, or (at your
+  option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+  csTimer Graph is distributed in the hope that it will be
+  useful, but WITHOUT ANY WARRANTY; without even
+  the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE.  See the GNU General
+  Public License for more details.
 
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  You should have received a copy of the GNU General
+  Public License along with csTimer Graph.
+  If not, see https://www.gnu.org/licenses/.
