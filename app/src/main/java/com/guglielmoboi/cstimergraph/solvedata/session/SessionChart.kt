@@ -30,7 +30,7 @@ class SessionChart(session: Session)
 {
     private val textsColor =
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-        AAColor.rgbaColor(255,255, 255)
+            AAColor.rgbaColor(255,255, 255)
         } else {
             AAColor.rgbaColor(0,0, 0)
         }

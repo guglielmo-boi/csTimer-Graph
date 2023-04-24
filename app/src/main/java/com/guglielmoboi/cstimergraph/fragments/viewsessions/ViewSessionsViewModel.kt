@@ -29,10 +29,10 @@ import com.guglielmoboi.cstimergraph.database.repository.Repository
 import com.guglielmoboi.cstimergraph.database.session.SessionEntity
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.DeleteSessionsResult
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.SessionClickMode
+import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
 import com.guglielmoboi.cstimergraph.solvedata.session.Session
 import com.guglielmoboi.cstimergraph.solvedata.solve.Solve
 import com.guglielmoboi.cstimergraph.solvedata.solve.compareByDate
-import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
 import com.guglielmoboi.cstimergraph.solvedata.solvesparser.SolvesParser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -45,11 +45,14 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
     private val mainScope = CoroutineScope(Dispatchers.Main + job)
 
     private val _maxIndex = MutableLiveData(0)
-    private val _selectedSessionsIds = MutableLiveData(mutableSetOf<Long>())
 
     private val _sessions = MutableLiveData<List<Session>>()
     val sessions: LiveData<List<Session>>
         get() = _sessions
+
+    private val _selectedSessionsIds = MutableLiveData<MutableSet<Long>>(mutableSetOf())
+    val selectedSessionsIds: LiveData<MutableSet<Long>>
+        get() = _selectedSessionsIds
 
     private val _sessionClickMode = MutableLiveData(SessionClickMode.DETAIL)
     val sessionClickMode: LiveData<SessionClickMode>

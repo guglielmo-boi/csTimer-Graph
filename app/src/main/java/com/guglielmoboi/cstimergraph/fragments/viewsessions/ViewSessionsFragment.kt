@@ -153,6 +153,10 @@ class ViewSessionsFragment : Fragment()
                 }
 
                 DeleteSessionsResult.CANCEL -> {
+                    viewModel.selectedSessionsIds.value?.forEach { id ->
+                        sessionAdapter.setSessionItemChecked(id)
+                    }
+
                     viewModel.cancelDeleteSessions()
                     viewModel.onCancelDeleteSessionsCompleted()
                 }

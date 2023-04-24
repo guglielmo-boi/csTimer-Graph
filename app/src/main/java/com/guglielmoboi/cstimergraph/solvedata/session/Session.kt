@@ -71,8 +71,8 @@ class Session(sessionEntity: SessionEntity, solveArgs: List<Solve>) : Comparable
                     times += solves[(i + j)].time
                 }
 
-                times.remove(times.maxOrNull()) // remove the worst time
-                times.remove(times.minOrNull()) // remove the best time
+                times.remove(times.maxOrNull())
+                times.remove(times.minOrNull())
 
                 averages += (getMeanFromSolvesTimes(times.toList())!!)
             }
