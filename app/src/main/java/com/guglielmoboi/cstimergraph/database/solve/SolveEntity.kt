@@ -36,16 +36,16 @@ data class SolveEntity
         @ColumnInfo(name = "time_string")
         val timeStr: String,
 
-        @ColumnInfo(name = "comment")
-        val comment: String,
+        @ColumnInfo(name = "time")
+        val time: String,
 
         @ColumnInfo(name = "scramble")
         val scramble: String,
 
+        @ColumnInfo(name = "comment")
+        val comment: String,
+
         @ColumnInfo(name = "date_time")
         val dateTime: String,
-
-        @ColumnInfo(name = "time")
-        val time: String
     )
 

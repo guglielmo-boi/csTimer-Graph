@@ -21,7 +21,7 @@ import java.time.Duration
 
 class SolveTime(private val time: Duration) : Comparable<SolveTime>
 {
-    private val timeString: String = buildTimeString(time)
+    private val thisString: String = buildString(time)
 
 
     constructor(timeStr: String = "00.00") : this(timeStr.toDuration())
@@ -33,8 +33,7 @@ class SolveTime(private val time: Duration) : Comparable<SolveTime>
 
             val durationStr = StringBuilder("PT")
 
-            val colonsCount =
-                this.count { it == ':' } // counts the number of colons in the input string
+            val colonsCount = this.count { it == ':' } // counts the number of colons in the input string
 
             colonsCount.let {
                 when {
@@ -48,14 +47,14 @@ class SolveTime(private val time: Duration) : Comparable<SolveTime>
                         durationStr.append(substringBefore(".") + "." + substringAfter(".") + "S")
                     }
 
-                    else -> throw IllegalArgumentException("SolveTime format is not correct!")
+                    else -> throw IllegalArgumentException("SolveTime format is not correct.")
                 }
             }
 
             return Duration.parse(durationStr)
         } //  "HH:MM:SS.CC" -> PTnHnMnS (7:10:24.48 -> PT7H10M24.48S)
 
-        fun buildTimeString(time: Duration): String {
+        fun buildString(time: Duration): String {
             var timeStr = time.toString().replace("PT", "").replace("H", "").replace("M", "").replace("S", "")
 
             var decimalsStr =
@@ -98,20 +97,21 @@ class SolveTime(private val time: Duration) : Comparable<SolveTime>
 
 
     override fun toString(): String {
-        return timeString
+        return thisString
     } // hh:mm:ss.cc
 
     override fun equals(other: Any?): Boolean {
         return if(other == null || other !is SolveTime) {
-            false
-        } else {
-            time == other.time
-        }
+                    false
+                } else {
+                    time == other.time
+                }
     }
 
     override fun hashCode(): Int {
         return time.hashCode() * 13
     }
+
     override fun compareTo(other: SolveTime): Int {
         return compareValuesBy(this, other, SolveTime::time)
     }

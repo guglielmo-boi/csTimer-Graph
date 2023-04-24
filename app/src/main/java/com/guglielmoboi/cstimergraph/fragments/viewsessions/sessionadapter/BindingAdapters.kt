@@ -59,7 +59,7 @@ fun TextView.setSessionEndDateTime(item: Session?) {
 @BindingAdapter("sessionSolvesCount")
 fun TextView.setSolvesCount(item: Session?) {
     item?.let {
-        text = "(${it.size.toString()})"
+        text = "(${it.size})"
     }
 }
 

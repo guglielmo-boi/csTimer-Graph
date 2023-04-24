@@ -27,20 +27,18 @@ data class Solve
         val number: Int,
         val timeStr: String,
         val time: SolveTime,
-        val solvePenalty: SolvePenalty?,
-        val comment: String,
         val scramble: Scramble,
-        val dateTime: DateTime
+        val comment: String,
+        val dateTime: DateTime,
     )
 
     : Comparable<Solve>
 {
     constructor(solveEntity: SolveEntity) :
-            this(solveEntity.solveId, solveEntity.solveIndex, solveEntity.number, solveEntity.timeStr, SolveTime(solveEntity.time),
-                 SolvePenalty.timeStringToSolvePenalty(solveEntity.timeStr), solveEntity.comment, Scramble(solveEntity.scramble), DateTime(solveEntity.dateTime))
+            this(solveEntity.solveId, solveEntity.solveIndex, solveEntity.number, solveEntity.timeStr,
+                SolveTime(solveEntity.time), Scramble(solveEntity.scramble), solveEntity.comment, DateTime(solveEntity.dateTime))
 
-
-    fun toSolveEntity(): SolveEntity = SolveEntity(0, index, number, timeStr, comment, scramble.toString(), dateTime.toString(), time.toString())
+    fun toSolveEntity(): SolveEntity = SolveEntity(0, index, number, timeStr, time.toString(), scramble.toString(), comment, dateTime.toString())
 
 
     override fun toString(): String {

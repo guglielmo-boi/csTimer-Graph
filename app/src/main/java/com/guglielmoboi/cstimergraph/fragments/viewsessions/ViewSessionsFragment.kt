@@ -115,7 +115,7 @@ class ViewSessionsFragment : Fragment()
                     }
 
                     SessionClickMode.DELETE -> {
-                        sessionAdapter.setSessionItemChecked(it)
+                        sessionAdapter.changeSessionItemSelected(it)
 
                         if(viewModel.selectSession(it)) { // return true if selectedSessionsIds isEmpty()
                             binding.deleteSessionsButton.visibility = View.GONE
@@ -154,7 +154,7 @@ class ViewSessionsFragment : Fragment()
 
                 DeleteSessionsResult.CANCEL -> {
                     viewModel.selectedSessionsIds.value?.forEach { id ->
-                        sessionAdapter.setSessionItemChecked(id)
+                        sessionAdapter.changeSessionItemSelected(id)
                     }
 
                     viewModel.cancelDeleteSessions()

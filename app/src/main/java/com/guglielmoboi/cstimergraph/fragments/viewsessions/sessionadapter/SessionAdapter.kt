@@ -46,13 +46,13 @@ class SessionAdapter(private val context: Context, private val sessionListener: 
 
     private fun getSessionItemIndexed(id: Long): Pair<Int, DataItem.SessionItem>? {
         currentList.forEachIndexed { index, item ->
-            if(item.id == id) return Pair(index, item as DataItem.SessionItem)
+            if(getItemViewType(index) == ITEM_TYPE_SESSION && item.id == id) return Pair(index, item as DataItem.SessionItem)
         }
 
         return null
     }
 
-    fun setSessionItemChecked(id: Long) {
+    fun changeSessionItemSelected(id: Long) {
         getSessionItemIndexed(id)?.apply {
             second.isSelected = !second.isSelected
             notifyItemChanged(first)

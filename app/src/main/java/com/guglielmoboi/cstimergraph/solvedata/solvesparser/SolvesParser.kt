@@ -19,11 +19,10 @@ package com.guglielmoboi.cstimergraph.solvedata.solvesparser
 
 import android.content.Context
 import android.net.Uri
+import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
 import com.guglielmoboi.cstimergraph.solvedata.solve.Scramble
 import com.guglielmoboi.cstimergraph.solvedata.solve.Solve
-import com.guglielmoboi.cstimergraph.solvedata.solve.SolvePenalty
 import com.guglielmoboi.cstimergraph.solvedata.solve.SolveTime
-import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -61,15 +60,20 @@ object SolvesParser
                 throw NumberFormatException("Invalid file formatting.")
             }
 
-            val number: Int = fields[0].toInt()
-            val timeStr: String = fields[1]
-            val solveTime = SolveTime(fields[5])
-            val solvePenalty = SolvePenalty.timeStringToSolvePenalty(timeStr)
-            val comment: String = fields[2]
-            val scrambleStr: String = fields[3]
+            val number = fields[0].toInt()
+            val timeStr = fields[1]
+            val solveTime = SolveTime(fields[5]) +
+                if(timeStr.contains("+")) {
+                    SolveTime("2.00")
+                } else {
+                    SolveTime("0.0")
+                }
+
+            val comment = fields[2]
+            val scramble = Scramble(fields[3])
             val dateTime = DateTime(fields[4])
 
-            solves.add(Solve(0, index++, number, timeStr, solveTime, solvePenalty, comment, Scramble(scrambleStr), dateTime))
+            solves.add(Solve(0, index++, number, timeStr, solveTime, scramble, comment, dateTime))
         }
 
         return solves.toList()

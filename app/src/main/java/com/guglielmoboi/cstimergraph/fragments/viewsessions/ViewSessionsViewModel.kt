@@ -236,6 +236,8 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
             Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unexpected file formatting.", Toast.LENGTH_LONG).show()
         } catch(indexOutOfBoundException: IndexOutOfBoundsException) {
             Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, database integrity compromised.", Toast.LENGTH_LONG).show()
+        } catch(exception: Exception) {
+            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unknown error occured.", Toast.LENGTH_LONG).show()
         }
     }
 
