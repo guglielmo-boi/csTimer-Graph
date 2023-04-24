@@ -34,7 +34,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/sessionsHeader"
@@ -76,7 +76,6 @@
                     android:id="@+id/sessionsList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/margin_boarder"
                     android:layout_marginTop="@dimen/margin_big"
                     android:backgroundTint="@color/secondaryColor" />
 

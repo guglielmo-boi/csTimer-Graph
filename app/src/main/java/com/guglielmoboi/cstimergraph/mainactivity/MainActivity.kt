@@ -19,11 +19,14 @@ package com.guglielmoboi.cstimergraph.mainactivity
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -77,8 +80,7 @@ class MainActivity : AppCompatActivity()
         setSupportActionBar(toolbar) // set the toolbar as the action bar
         supportActionBar?.setDisplayShowTitleEnabled(false) // make toolbar's title invisible
 
-        toolbarDrawerToggle.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.onPrimaryColor) // set the toggle color to onPrimary
-
+        toolbarDrawerToggle.drawerArrowDrawable.color = getColor(R.color.onPrimaryColor) // set the toggle color to onPrimary
         toolbarDrawerToggle.syncState() // sync the toolbar state
 
         navView = binding.navView
@@ -101,7 +103,6 @@ class MainActivity : AppCompatActivity()
 
         NavigationUI.setupWithNavController(navView, navController)
     }
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(toolbarDrawerToggle.onOptionsItemSelected(item)) {

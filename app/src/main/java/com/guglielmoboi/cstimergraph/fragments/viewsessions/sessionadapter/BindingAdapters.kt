@@ -17,6 +17,7 @@
 
 package com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter
 
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.guglielmoboi.cstimergraph.solvedata.session.Session

@@ -86,13 +86,12 @@ class ViewSessionsFragment : Fragment()
 
         sessionListener = SessionListener(
             SessionClickListener { sessionId ->
-                viewModel.onSessionClicked(sessionId) },
+                viewModel.onSessionClicked(sessionId)},
             SessionLongClickListener { sessionId ->
                 viewModel.onSessionLongClicked(sessionId) }
         )
 
-        sessionAdapter = SessionAdapter(sessionListener)
-
+        sessionAdapter = SessionAdapter(requireContext(), sessionListener)
         binding.sessionsList.adapter = sessionAdapter
 
         importSessionResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -116,9 +115,12 @@ class ViewSessionsFragment : Fragment()
                     }
 
                     SessionClickMode.DELETE -> {
+                        sessionAdapter.setSessionItemChecked(it)
+
                         if(viewModel.selectSession(it)) { // return true if selectedSessionsIds isEmpty()
                             binding.deleteSessionsButton.visibility = View.GONE
                         }
+
                         viewModel.onSelectSessionCompleted()
                     }
 

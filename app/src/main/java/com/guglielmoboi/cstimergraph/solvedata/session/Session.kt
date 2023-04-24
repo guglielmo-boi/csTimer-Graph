@@ -26,7 +26,7 @@ import com.guglielmoboi.cstimergraph.util.datetime.DateTime
 class Session(sessionEntity: SessionEntity, solveArgs: List<Solve>) : Comparable<Session>
 {
     val id: Long = sessionEntity.sessionId
-    val name: String? = sessionEntity.name
+    val name: String = sessionEntity.name
 
     val startDateTime: DateTime? = initDateTime(sessionEntity.startDateTime)
     val endDateTime: DateTime? = initDateTime(sessionEntity.endDateTime)
@@ -86,9 +86,11 @@ class Session(sessionEntity: SessionEntity, solveArgs: List<Solve>) : Comparable
         val ret = StringBuilder()
 
         ret.append("Mean: $mean\n")
+
         if(bestSolve != null) {
             ret.append("Best Solve: ${bestSolve.timeStr}\n")
         }
+
         if(worstSolve != null) {
             ret.append("Worst Solve: ${worstSolve.timeStr}\n")
         }

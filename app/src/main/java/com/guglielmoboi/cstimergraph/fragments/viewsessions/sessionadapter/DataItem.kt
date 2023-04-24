@@ -23,7 +23,7 @@ sealed class DataItem
 {
     abstract val id: Long
 
-    data class SessionItem(val session: Session) : DataItem()
+    data class SessionItem(val session: Session, var checked: Boolean) : DataItem()
     {
         override val id = session.id
     }

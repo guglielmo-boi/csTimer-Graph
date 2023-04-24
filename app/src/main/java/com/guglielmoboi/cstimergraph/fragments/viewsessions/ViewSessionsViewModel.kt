@@ -35,7 +35,10 @@ import com.guglielmoboi.cstimergraph.util.SessionClickMode
 import com.guglielmoboi.cstimergraph.util.converters.readTextFromUri
 import com.guglielmoboi.cstimergraph.util.converters.textToSolves
 import com.guglielmoboi.cstimergraph.util.datetime.DateTime
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 
 class ViewSessionsViewModel(private val repository: Repository, application: Application) : AndroidViewModel(application)
 {
@@ -43,7 +46,7 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
     private val mainScope = CoroutineScope(Dispatchers.Main + job)
 
     private val _maxIndex = MutableLiveData(0)
-    private val _selectedSessionsIds = MutableLiveData(mutableListOf<Long>())
+    private val _selectedSessionsIds = MutableLiveData(mutableSetOf<Long>())
 
     private val _sessions = MutableLiveData<List<Session>>()
     val sessions: LiveData<List<Session>>
@@ -80,13 +83,14 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
         private fun calcEndDateTime(solves: List<Solve>): DateTime? = solves.maxWithOrNull(Solve::compareByDate)?.dateTime
     }
 
-    fun setup() {
-        updateMaxIndex()
-        createSessions()
-    }
 
     fun getMutableDeleteSessionsResult(): MutableLiveData<DeleteSessionsResult> {
         return _deleteSessionsResult
+    }
+
+    fun setup() {
+        updateMaxIndex()
+        createSessions()
     }
 
     private fun updateMaxIndex() {

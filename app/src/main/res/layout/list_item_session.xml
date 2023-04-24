@@ -37,22 +37,24 @@
 
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/padding_big">
+        android:layout_height="wrap_content">
 
         <HorizontalScrollView
+            android:id="@+id/sessionItem"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{() -> sessionListener.sessionClickListener.onClick(session)}"
                 android:onLongClick="@{() -> sessionListener.sessionLongClickListener.onLongClick(session)}"
-                android:orientation="vertical"
-                android:paddingBottom="@dimen/padding_small">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/sessionName"
@@ -71,6 +73,7 @@
                     style="@style/small_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_boarder"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sessionName"
                     app:sessionStartDateTime="@{session}"
@@ -115,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_small"
                     android:text="@string/mean"
-                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintStart_toStartOf="@+id/sessionStartDateTime"
                     app:layout_constraintTop_toBottomOf="@+id/sessionStartDateTime" />
 
                 <TextView
@@ -136,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_small"
                     android:text="@string/bestSolve"
-                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintStart_toStartOf="@+id/sessionMeanHeader"
                     app:layout_constraintTop_toBottomOf="@+id/mean" />
 
                 <TextView
@@ -175,7 +178,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_small"
                     android:text="@string/bestAverageFive"
-                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintStart_toStartOf="@+id/bestSolveHeader"
                     app:layout_constraintTop_toBottomOf="@+id/worstSolveHeader" />
 
                 <TextView
@@ -214,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_small"
                     android:text="@string/bestAverageTwelve"
-                    app:layout_constraintStart_toStartOf="@+id/sessionName"
+                    app:layout_constraintStart_toStartOf="@+id/bestAvg5Header"
                     app:layout_constraintTop_toBottomOf="@+id/WorstAvg5Header" />
 
                 <TextView
@@ -235,7 +238,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_medium"
                     android:text="@string/worstAverageTwelve"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/bestAvg12"
                     app:layout_constraintStart_toEndOf="@+id/bestAvg12"
                     app:layout_constraintTop_toTopOf="@+id/bestAvg12" />
 
@@ -254,6 +257,18 @@
 
         </HorizontalScrollView>
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/sessionItemPadding"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/padding_big"
+            android:backgroundTint="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sessionItem"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>

@@ -23,12 +23,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
 
-class DeleteSessionsViewModelFactory(private val application: Application, private val result: MutableLiveData<DeleteSessionsResult>) : ViewModelProvider.Factory
+class DeleteSessionsViewModelFactory(private val result: MutableLiveData<DeleteSessionsResult>) : ViewModelProvider.Factory
 {
     @Suppress("unchecked_cast")
     override fun <T: ViewModel> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(DeleteSessionsViewModel::class.java)) {
-            return DeleteSessionsViewModel(application, result) as T
+            return DeleteSessionsViewModel(result) as T
         }
 
         throw IllegalArgumentException("Unknown ViewModel class")

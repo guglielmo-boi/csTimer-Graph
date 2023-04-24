@@ -21,6 +21,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
 import com.guglielmoboi.cstimergraph.database.repository.Repository
 import com.guglielmoboi.cstimergraph.solvedata.session.Session
@@ -29,7 +30,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class DetailSessionViewModel(private val repository: Repository, private val sessionId: Long, application: Application) : AndroidViewModel(application)
+class DetailSessionViewModel(private val repository: Repository, private val sessionId: Long) : ViewModel()
 {
     private var job = Job()
     private val mainScope = CoroutineScope(Dispatchers.Main + job)
@@ -45,12 +46,12 @@ class DetailSessionViewModel(private val repository: Repository, private val ses
         }
     }
 
-
     fun drawChart(chartView: AAChartView) {
         if(session.value != null) {
             chartView.aa_drawChartWithChartModel(session.value!!.chart.chartModel)
         }
     }
+
 
     override fun onCleared() {
         super.onCleared()

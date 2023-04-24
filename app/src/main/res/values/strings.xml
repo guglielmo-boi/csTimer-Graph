@@ -44,7 +44,7 @@
     <!-- Import Session Fragment -->
 
     <!-- Headers texts -->
-    <string name="tutorial_subheader_0_text">First, export the session file (.csv):</string>
+    <string name="tutorial_subheader_0_text">First, export the session file from cstimer.net:</string>
     <string name="tutorial_subheader_1_text">Then, import it using the button below:</string>
     <string name="tutorial_pc_header_text">Desktop device</string>
     <string name="tutorial_mobile_header_text">Mobile device</string>

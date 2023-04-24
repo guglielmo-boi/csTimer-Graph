@@ -22,12 +22,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.guglielmoboi.cstimergraph.database.repository.Repository
 
-class DetailSessionViewModelFactory(private val repository: Repository, private val sessionId: Long, private val application: Application) : ViewModelProvider.Factory
+class DetailSessionViewModelFactory(private val repository: Repository, private val sessionId: Long) : ViewModelProvider.Factory
 {
     @Suppress("unchecked_cast")
     override fun <T: ViewModel> create(modelClass: Class<T>): T {
         if(modelClass.isAssignableFrom(DetailSessionViewModel::class.java)) {
-            return DetailSessionViewModel(repository, sessionId, application) as T
+            return DetailSessionViewModel(repository, sessionId) as T
         }
 
         throw IllegalArgumentException("Unknown ViewModel class!")

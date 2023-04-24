@@ -17,9 +17,11 @@
 
 package com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.guglielmoboi.cstimergraph.R
@@ -31,15 +33,30 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SessionAdapter(private val sessionListener: SessionListener) : ListAdapter<DataItem, RecyclerView.ViewHolder>(SessionsDiffCallback())
+class SessionAdapter(private val context: Context, private val sessionListener: SessionListener) : ListAdapter<DataItem, RecyclerView.ViewHolder>(SessionsDiffCallback())
 {
     private val adapterScope = CoroutineScope(Dispatchers.Default)
 
 
     companion object
     {
-        private const val ITEM_VIEW_TYPE_PADDING = 0
-        private const val ITEM_VIEW_TYPE_SESSION = 1
+        private const val ITEM_TYPE_PADDING = 0
+        private const val ITEM_TYPE_SESSION = 1
+    }
+
+    private fun getSessionItemIndexed(id: Long): Pair<Int, DataItem.SessionItem>? {
+        currentList.forEachIndexed { index, item ->
+            if(item.id == id) return Pair(index, item as DataItem.SessionItem)
+        }
+
+        return null
+    }
+
+    fun setSessionItemChecked(id: Long) {
+        getSessionItemIndexed(id)?.apply {
+            second.checked = !second.checked
+            notifyItemChanged(first)
+        }
     }
 
 
@@ -47,7 +64,7 @@ class SessionAdapter(private val sessionListener: SessionListener) : ListAdapter
         adapterScope.launch {
             val items = when(list) {
                 null -> listOf(DataItem.PaddingItem)
-                else -> list.map { DataItem.SessionItem(it) } + listOf(DataItem.PaddingItem)
+                else -> list.map { DataItem.SessionItem(it, false) } + listOf(DataItem.PaddingItem)
             }
 
             withContext(Dispatchers.Main) {
@@ -56,10 +73,11 @@ class SessionAdapter(private val sessionListener: SessionListener) : ListAdapter
         }
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when(viewType) {
-            ITEM_VIEW_TYPE_PADDING -> TextViewHolder.from(parent)
-            ITEM_VIEW_TYPE_SESSION -> ViewHolder.from(parent)
+            ITEM_TYPE_PADDING -> TextViewHolder.from(parent)
+            ITEM_TYPE_SESSION -> ViewHolder.from(parent)
 
             else -> throw ClassCastException("Unknown viewType $viewType")
         }
@@ -70,14 +88,22 @@ class SessionAdapter(private val sessionListener: SessionListener) : ListAdapter
             is ViewHolder -> {
                 val sessionItem = getItem(position) as DataItem.SessionItem
                 holder.bind(sessionItem.session, sessionListener)
+
+                if(sessionItem.checked) {
+                    holder.itemView.findViewById<View>(R.id.sessionItem).setBackgroundColor(getColor(context, R.color.primaryTransparentColor))
+                    holder.itemView.findViewById<View>(R.id.sessionItemPadding).setBackgroundColor(getColor(context, R.color.primaryTransparentColor))
+                } else {
+                    holder.itemView.findViewById<View>(R.id.sessionItem).setBackgroundColor(getColor(context, R.color.transparent))
+                    holder.itemView.findViewById<View>(R.id.sessionItemPadding).setBackgroundColor(getColor(context, R.color.transparent))
+                }
             }
         }
     }
 
     override fun getItemViewType(position: Int): Int {
         return when(getItem(position)) {
-            is DataItem.PaddingItem -> ITEM_VIEW_TYPE_PADDING
-            is DataItem.SessionItem -> ITEM_VIEW_TYPE_SESSION
+            is DataItem.PaddingItem -> ITEM_TYPE_PADDING
+            is DataItem.SessionItem -> ITEM_TYPE_SESSION
         }
     }
 
@@ -87,7 +113,6 @@ class SessionAdapter(private val sessionListener: SessionListener) : ListAdapter
         fun bind(item: Session, sessionListener: SessionListener) {
             binding.session = item
             binding.sessionListener = sessionListener
-            binding.executePendingBindings()
         }
 
         companion object {

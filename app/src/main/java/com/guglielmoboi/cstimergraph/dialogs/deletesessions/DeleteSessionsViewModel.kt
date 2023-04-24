@@ -21,9 +21,10 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
 
-class DeleteSessionsViewModel(application: Application, private val result: MutableLiveData<DeleteSessionsResult>) : AndroidViewModel(application)
+class DeleteSessionsViewModel(private val result: MutableLiveData<DeleteSessionsResult>) : ViewModel()
 {
     private val _deleteButtonClicked = MutableLiveData<Boolean>()
     val deleteButtonClicked: LiveData<Boolean>

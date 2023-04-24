@@ -277,7 +277,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_boarder"
-                    android:layout_marginTop="@dimen/margin_big"
+                    android:layout_marginTop="@dimen/margin_giant"
                     android:layout_marginEnd="@dimen/margin_small"
                     android:text="@string/tutorial_subheader_1_text"
                     android:textAlignment="viewStart"

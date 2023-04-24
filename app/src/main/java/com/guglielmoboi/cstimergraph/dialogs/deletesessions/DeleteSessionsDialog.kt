@@ -24,6 +24,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.MutableLiveData
@@ -34,8 +35,6 @@ import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
 
 class DeleteSessionsDialog(private val result: MutableLiveData<DeleteSessionsResult>) : DialogFragment()
 {
-    private lateinit var application: Application
-
     private lateinit var viewModel: DeleteSessionsViewModel
     private lateinit var viewModelFactory: DeleteSessionsViewModelFactory
 
@@ -49,16 +48,14 @@ class DeleteSessionsDialog(private val result: MutableLiveData<DeleteSessionsRes
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        application = requireNotNull(this.activity).application
-
-        viewModelFactory = DeleteSessionsViewModelFactory(application, result)
+        viewModelFactory = DeleteSessionsViewModelFactory(result)
         viewModel = ViewModelProvider(this, viewModelFactory)[DeleteSessionsViewModel::class.java]
 
         binding = DataBindingUtil.inflate(inflater, R.layout.dialog_delete_sessions, container, false)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.transparent)))
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(getColor(requireContext(), R.color.transparent)))
 
         viewModel.deleteButtonClicked.observe(viewLifecycleOwner) {
             if(it) {

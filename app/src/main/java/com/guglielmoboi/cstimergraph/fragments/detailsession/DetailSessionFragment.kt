@@ -50,7 +50,7 @@ class DetailSessionFragment : Fragment()
 
         navArgs = DetailSessionFragmentArgs.fromBundle(requireArguments())
 
-        viewModelFactory = DetailSessionViewModelFactory(Repository(application), navArgs.sessionId, application)
+        viewModelFactory = DetailSessionViewModelFactory(Repository(application), navArgs.sessionId)
         viewModel = ViewModelProvider(this, viewModelFactory)[DetailSessionViewModel::class.java]
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail_session, container, false)

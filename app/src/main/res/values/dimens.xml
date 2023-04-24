@@ -50,7 +50,7 @@
     <dimen name="button_height">64dp</dimen>
 
     <!-- Nav Drawer width & height -->
-    <dimen name="nav_drawer_width">250dp</dimen>
+    <dimen name="nav_drawer_width">240dp</dimen>
     <dimen name="nav_header_height">192dp</dimen>
 
     <!-- Nav View elevations -->
