@@ -16,7 +16,7 @@
 //    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.
 
 
-package com.guglielmoboi.cstimergraph.util.preferences
+package com.guglielmoboi.cstimergraph.preferences
 
 enum class HomeScreenPreference
 {

@@ -21,23 +21,23 @@ import com.guglielmoboi.cstimergraph.database.session.SessionEntity
 import com.guglielmoboi.cstimergraph.solvedata.solve.Solve
 import com.guglielmoboi.cstimergraph.solvedata.solve.SolveTime
 import com.guglielmoboi.cstimergraph.solvedata.solve.getMeanFromSolvesTimes
-import com.guglielmoboi.cstimergraph.util.datetime.DateTime
+import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
 
 class Session(sessionEntity: SessionEntity, solveArgs: List<Solve>) : Comparable<Session>
 {
     val id: Long = sessionEntity.sessionId
     val name: String = sessionEntity.name
 
-    val startDateTime: DateTime? = initDateTime(sessionEntity.startDateTime)
-    val endDateTime: DateTime? = initDateTime(sessionEntity.endDateTime)
-
     val solves: List<Solve> = solveArgs
-
-    val averagesFive: List<SolveTime> = calcAverages(solves, size = 5)
-    val averagesTwelve: List<SolveTime> = calcAverages(solves, size = 12)
 
     val size: Int
         get() = solves.size
+
+    val startDateTime: DateTime? = calcDateTime(sessionEntity.startDateTime)
+    val endDateTime: DateTime? = calcDateTime(sessionEntity.endDateTime)
+
+    val averagesFive: List<SolveTime> = calcAverages(solves, size = 5)
+    val averagesTwelve: List<SolveTime> = calcAverages(solves, size = 12)
 
     val mean: SolveTime? = getMeanFromSolvesTimes(solves.map { it.time })
     val bestSolve: Solve? = solves.minOrNull()
@@ -52,13 +52,13 @@ class Session(sessionEntity: SessionEntity, solveArgs: List<Solve>) : Comparable
 
     companion object
     {
-        private fun initDateTime(dateTime: String?): DateTime? {
+        private fun calcDateTime(dateTime: String?): DateTime? {
             return if(dateTime != null) {
                 DateTime(dateTime)
             } else {
                 null
             }
-        } // initializes DateTime based on its nullable value
+        }
 
         private fun calcAverages(solves: List<Solve>, size: Int): List<SolveTime> {
             if(solves.size < size) return listOf() // checks if at least one average can be calculated

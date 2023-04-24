@@ -18,27 +18,7 @@
 package com.guglielmoboi.cstimergraph.solvedata.solve
 
 import com.guglielmoboi.cstimergraph.database.solve.SolveEntity
-import com.guglielmoboi.cstimergraph.util.datetime.DateTime
-
-
-enum class SolvePenalty
-{
-    DNF, PLUS2;
-
-    companion object
-    {
-        fun timeStringToSolvePenalty(timeStr: String): SolvePenalty? {
-            return when {
-                timeStr.contains("DNF") -> SolvePenalty.DNF
-
-                timeStr.contains("+") -> SolvePenalty.PLUS2
-
-                else -> null
-            }
-        }
-    }
-}
-
+import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
 
 data class Solve
     (
@@ -60,6 +40,9 @@ data class Solve
                  SolvePenalty.timeStringToSolvePenalty(solveEntity.timeStr), solveEntity.comment, Scramble(solveEntity.scramble), DateTime(solveEntity.dateTime))
 
 
+    fun toSolveEntity(): SolveEntity = SolveEntity(0, index, number, timeStr, comment, scramble.toString(), dateTime.toString(), time.toString())
+
+
     override fun toString(): String {
         return("$number $timeStr $comment $scramble $dateTime $timeStr")
     }
@@ -67,10 +50,6 @@ data class Solve
     override fun compareTo(other: Solve): Int {
         return compareValuesBy(this, other, Solve::time)
     }
-
-
-    fun toSolveEntity(): SolveEntity =
-        SolveEntity(0, index, number, timeStr, comment, scramble.toString(), dateTime.toString(), time.toString())
 }
 
 

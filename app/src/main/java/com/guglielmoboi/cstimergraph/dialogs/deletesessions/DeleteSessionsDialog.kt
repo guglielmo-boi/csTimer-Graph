@@ -17,13 +17,11 @@
 
 package com.guglielmoboi.cstimergraph.dialogs.deletesessions
 
-import android.app.Application
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
@@ -31,7 +29,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import com.guglielmoboi.cstimergraph.R
 import com.guglielmoboi.cstimergraph.databinding.DialogDeleteSessionsBinding
-import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
+import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.DeleteSessionsResult
 
 class DeleteSessionsDialog(private val result: MutableLiveData<DeleteSessionsResult>) : DialogFragment()
 {

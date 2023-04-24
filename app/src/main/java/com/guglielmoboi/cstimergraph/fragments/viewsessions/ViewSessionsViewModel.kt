@@ -27,14 +27,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import com.guglielmoboi.cstimergraph.database.repository.Repository
 import com.guglielmoboi.cstimergraph.database.session.SessionEntity
+import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.DeleteSessionsResult
+import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.SessionClickMode
 import com.guglielmoboi.cstimergraph.solvedata.session.Session
 import com.guglielmoboi.cstimergraph.solvedata.solve.Solve
 import com.guglielmoboi.cstimergraph.solvedata.solve.compareByDate
-import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
-import com.guglielmoboi.cstimergraph.util.SessionClickMode
-import com.guglielmoboi.cstimergraph.util.converters.readTextFromUri
-import com.guglielmoboi.cstimergraph.util.converters.textToSolves
-import com.guglielmoboi.cstimergraph.util.datetime.DateTime
+import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
+import com.guglielmoboi.cstimergraph.solvedata.solvesparser.SolvesParser
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -218,16 +217,18 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
 
 
     fun loadSession(data: Intent?, navController: NavController) {
-        val uri = data?.data
+        val uri = data?.data ?: throw IllegalArgumentException("Invalid uri.")
 
         // convert the file content to solves through its uri
         try {
             val firstSolveIndex = _maxIndex.value?.plus(1) ?: throw IndexOutOfBoundsException("Invalid database index.")
-            val solves = textToSolves(readTextFromUri(uri!!, getApplication<Application?>().applicationContext), firstSolveIndex)
+            val solves = SolvesParser.parse(getApplication<Application?>().applicationContext, uri, firstSolveIndex)
 
             mainScope.launch {
                 saveSession(solves, navController)
             }
+        } catch(illegalArgumentException: IllegalArgumentException) {
+            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, specified uri is not valid.", Toast.LENGTH_LONG).show()
         } catch(numberFormatException: NumberFormatException) {
             Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unexpected file formatting.", Toast.LENGTH_LONG).show()
         } catch(indexOutOfBoundException: IndexOutOfBoundsException) {

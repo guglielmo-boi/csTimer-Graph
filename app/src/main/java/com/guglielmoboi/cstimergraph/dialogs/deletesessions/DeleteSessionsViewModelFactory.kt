@@ -17,11 +17,10 @@
 
 package com.guglielmoboi.cstimergraph.dialogs.deletesessions
 
-import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
+import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.DeleteSessionsResult
 
 class DeleteSessionsViewModelFactory(private val result: MutableLiveData<DeleteSessionsResult>) : ViewModelProvider.Factory
 {

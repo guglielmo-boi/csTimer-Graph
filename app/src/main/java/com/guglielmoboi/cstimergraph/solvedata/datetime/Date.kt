@@ -15,23 +15,28 @@
 //    You should have received a copy of the GNU General Public License
 //    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.
 
-package com.guglielmoboi.cstimergraph.util.datetime
+package com.guglielmoboi.cstimergraph.solvedata.datetime
 
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-class Date(val date: LocalDate)
-    : Comparable<Date>
+class Date(val date: LocalDate) : Comparable<Date>
 {
+    val day: Int
+        get() = date.dayOfMonth
+    val month: Int
+        get() = date.monthValue
+    val year: Int
+        get() = date.year
+
+
     constructor(dateString: String) : this(LocalDate.parse(dateString, DateTimeFormatter.ofPattern("yyyy-MM-dd")))
 
 
-    val day: Int
-    get() = date.dayOfMonth
-    val month: Int
-    get() = date.monthValue
-    val year: Int
-    get() = date.year
+    fun toStringFormatted(): String {
+        val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+        return formatter.format(date)
+    }
 
 
     override fun toString(): String {
@@ -53,11 +58,5 @@ class Date(val date: LocalDate)
 
     override fun compareTo(other: Date): Int {
         return compareValuesBy(this, other, Date::year, Date::month, Date::day)
-    }
-
-
-    fun toStringFormatted(): String {
-        val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-        return formatter.format(date)
     }
 }

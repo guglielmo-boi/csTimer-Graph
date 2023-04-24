@@ -15,15 +15,10 @@
 //    You should have received a copy of the GNU General Public License
 //    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.
 
-package com.guglielmoboi.cstimergraph.util.datetime
+package com.guglielmoboi.cstimergraph.solvedata.datetime
 
-class DateTime(val date: Date, val time: Time)
-    : Comparable<DateTime>
+class DateTime(val date: Date, val time: Time) : Comparable<DateTime>
 {
-    constructor(dateString: String, timeString: String) : this(Date(dateString), Time(timeString))
-    constructor(dateTimeString: String) : this(dateTimeString.substringBeforeLast(" "), dateTimeString.substringAfterLast(" "))
-
-
     private val day: Int
         get() = date.day
     private val month: Int
@@ -36,6 +31,13 @@ class DateTime(val date: Date, val time: Time)
         get() = time.minute
     private val second: Int
         get() = time.second
+
+
+    constructor(dateString: String, timeString: String) : this(Date(dateString), Time(timeString))
+    constructor(dateTimeString: String) : this(dateTimeString.substringBeforeLast(" "), dateTimeString.substringAfterLast(" "))
+
+
+    fun toStringFormatted(): String = "${date.toStringFormatted()}, $time"
 
 
     override fun toString(): String =
@@ -56,8 +58,4 @@ class DateTime(val date: Date, val time: Time)
     override fun compareTo(other: DateTime): Int {
         return compareValuesBy(this, other, DateTime::year, DateTime::month, DateTime::day, DateTime::hour, DateTime::minute, DateTime::second)
     }
-
-
-    fun toStringFormatted(): String =
-        "${date.toStringFormatted()}, $time"
 }

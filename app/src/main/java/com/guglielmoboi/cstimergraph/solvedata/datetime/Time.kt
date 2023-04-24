@@ -15,22 +15,21 @@
 //    You should have received a copy of the GNU General Public License
 //    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.
 
-package com.guglielmoboi.cstimergraph.util.datetime
+package com.guglielmoboi.cstimergraph.solvedata.datetime
 
 import java.time.LocalTime
 
-class Time(val time: LocalTime)
-    : Comparable<Time>
+class Time(val time: LocalTime) : Comparable<Time>
 {
-    constructor(timeString: String) : this(LocalTime.parse(timeString))
-
-
     val hour: Int
         get() = time.hour
     val minute: Int
         get() = time.minute
     val second: Int
         get() = time.second
+
+
+    constructor(timeString: String) : this(LocalTime.parse(timeString))
 
 
     override fun toString(): String {

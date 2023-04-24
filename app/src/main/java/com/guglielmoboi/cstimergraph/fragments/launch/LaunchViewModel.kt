@@ -23,8 +23,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.AndroidViewModel
 import androidx.navigation.NavController
 import com.guglielmoboi.cstimergraph.R
-import com.guglielmoboi.cstimergraph.util.preferences.DarkThemePreference
-import com.guglielmoboi.cstimergraph.util.preferences.HomeScreenPreference
+import com.guglielmoboi.cstimergraph.preferences.DarkThemePreference
+import com.guglielmoboi.cstimergraph.preferences.HomeScreenPreference
 
 class LaunchViewModel(private val sharedPreferences: SharedPreferences, application: Application) : AndroidViewModel(application)
 {

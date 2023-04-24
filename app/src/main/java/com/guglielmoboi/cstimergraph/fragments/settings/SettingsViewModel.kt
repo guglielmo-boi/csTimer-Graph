@@ -24,7 +24,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.guglielmoboi.cstimergraph.R
-import com.guglielmoboi.cstimergraph.util.preferences.DarkThemePreference
+import com.guglielmoboi.cstimergraph.preferences.DarkThemePreference
 
 class SettingsViewModel(private val sharedPreferences: SharedPreferences, application: Application) : AndroidViewModel(application)
 {

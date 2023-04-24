@@ -32,8 +32,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.guglielmoboi.cstimergraph.R
 import com.guglielmoboi.cstimergraph.databinding.FragmentSettingsBinding
-import com.guglielmoboi.cstimergraph.util.preferences.DarkThemePreference
-import com.guglielmoboi.cstimergraph.util.preferences.HomeScreenPreference
+import com.guglielmoboi.cstimergraph.preferences.DarkThemePreference
+import com.guglielmoboi.cstimergraph.preferences.HomeScreenPreference
 
 class SettingsFragment : Fragment(), AdapterView.OnItemSelectedListener
 {

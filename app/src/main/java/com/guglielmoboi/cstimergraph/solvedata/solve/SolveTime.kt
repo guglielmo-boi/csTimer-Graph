@@ -19,9 +19,11 @@ package com.guglielmoboi.cstimergraph.solvedata.solve
 
 import java.time.Duration
 
-class SolveTime(private val time: Duration)
-    : Comparable<SolveTime>
+class SolveTime(private val time: Duration) : Comparable<SolveTime>
 {
+    private val timeString: String = buildTimeString(time)
+
+
     constructor(timeStr: String = "00.00") : this(timeStr.toDuration())
 
 
@@ -52,48 +54,51 @@ class SolveTime(private val time: Duration)
 
             return Duration.parse(durationStr)
         } //  "HH:MM:SS.CC" -> PTnHnMnS (7:10:24.48 -> PT7H10M24.48S)
+
+        fun buildTimeString(time: Duration): String {
+            var timeStr = time.toString().replace("PT", "").replace("H", "").replace("M", "").replace("S", "")
+
+            var decimalsStr =
+                if(timeStr.contains( ".")){
+                    timeStr.substringAfterLast(".")
+                } else {
+                    ""
+                }
+
+            decimalsStr.length.let {
+                when {
+                    it > 2-> {
+                        decimalsStr = decimalsStr.substring(0, 3)
+
+                        val decimals: Int =
+                            if(decimalsStr.last().toString().toInt() >= 5) {
+                                decimalsStr.substring(0, 2).toInt() + 1
+                            } else {
+                                decimalsStr.substring(0, 2).toInt()
+                            }
+
+                        timeStr = if(decimalsStr[0] == '0') {
+                            timeStr.replaceAfterLast(".", "0$decimals")
+                        } else {
+                            timeStr.replaceAfterLast( ".", decimals.toString())
+                        }
+                    }
+
+                    it == 1 -> timeStr += "0"
+
+                    it == 0 -> timeStr += ".00"
+
+                    else -> { }
+                }
+            }
+
+            return timeStr
+        }
     }
 
 
     override fun toString(): String {
-
-        var timeStr = time.toString().replace("PT", "").replace("H", "").replace("M", "").replace("S", "")
-
-        var decimalsStr =
-            if(timeStr.contains( ".")){
-                 timeStr.substringAfterLast(".")
-            } else {
-                ""
-            }
-
-        decimalsStr.length.let {
-            when {
-                it > 2-> {
-                    decimalsStr = decimalsStr.substring(0, 3)
-
-                    val decimals: Int =
-                        if(decimalsStr.last().toString().toInt() >= 5) {
-                            decimalsStr.substring(0, 2).toInt() + 1
-                        } else {
-                            decimalsStr.substring(0, 2).toInt()
-                        }
-
-                    timeStr = if(decimalsStr[0] == '0') {
-                        timeStr.replaceAfterLast(".", "0$decimals")
-                    } else {
-                        timeStr.replaceAfterLast( ".", decimals.toString())
-                    }
-                }
-
-                it == 1 -> timeStr += "0"
-
-                it == 0 -> timeStr += ".00"
-
-                else -> { }
-            }
-        }
-
-        return timeStr
+        return timeString
     } // hh:mm:ss.cc
 
     override fun equals(other: Any?): Boolean {

@@ -40,8 +40,8 @@ import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.Sessi
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.sessionlistener.SessionClickListener
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.sessionlistener.SessionListener
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.sessionlistener.SessionLongClickListener
-import com.guglielmoboi.cstimergraph.util.DeleteSessionsResult
-import com.guglielmoboi.cstimergraph.util.SessionClickMode
+import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.DeleteSessionsResult
+import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.SessionClickMode
 
 class ViewSessionsFragment : Fragment()
 {
