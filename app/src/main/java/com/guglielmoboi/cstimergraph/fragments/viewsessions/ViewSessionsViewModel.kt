@@ -220,7 +220,7 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
 
 
     fun loadSession(data: Intent?, navController: NavController) {
-        val uri = data?.data ?: throw IllegalArgumentException("Invalid uri.")
+        val uri = data?.data ?: throw NoSuchElementException("Invalid uri.")
 
         // convert the file content to solves through its uri
         try {
@@ -230,14 +230,14 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
             mainScope.launch {
                 saveSession(solves, navController)
             }
-        } catch(illegalArgumentException: IllegalArgumentException) {
-            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, specified uri is not valid.", Toast.LENGTH_LONG).show()
+        } catch(noSuchElementException: NoSuchElementException) {
+            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, imported file is not valid.", Toast.LENGTH_LONG).show()
         } catch(numberFormatException: NumberFormatException) {
             Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unexpected file formatting.", Toast.LENGTH_LONG).show()
         } catch(indexOutOfBoundException: IndexOutOfBoundsException) {
             Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, database integrity compromised.", Toast.LENGTH_LONG).show()
         } catch(exception: Exception) {
-            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unknown error occured.", Toast.LENGTH_LONG).show()
+            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unknown error occurred.", Toast.LENGTH_LONG).show()
         }
     }
 

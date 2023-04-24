@@ -47,7 +47,7 @@ class SolveTime(private val time: Duration) : Comparable<SolveTime>
                         durationStr.append(substringBefore(".") + "." + substringAfter(".") + "S")
                     }
 
-                    else -> throw IllegalArgumentException("SolveTime format is not correct.")
+                    else -> throw NumberFormatException("SolveTime format is not correct.")
                 }
             }
 

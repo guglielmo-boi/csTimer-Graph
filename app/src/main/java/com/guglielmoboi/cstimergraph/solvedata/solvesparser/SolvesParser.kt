@@ -51,6 +51,10 @@ object SolvesParser
         val solves = mutableListOf<Solve>()
         var index = firstSolveIndex
 
+        if(text.size <= 1) {
+            throw NumberFormatException("Invalid file formatting.")
+        }
+
         for((i, line) in text.withIndex()) {
             if(i == 0) continue
 
