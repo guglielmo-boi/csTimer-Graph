@@ -28,35 +28,34 @@ import com.guglielmoboi.cstimergraph.R
 
 class SessionChart(session: Session)
 {
+    private val textsColor =
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+        AAColor.rgbaColor(255,255, 255)
+        } else {
+            AAColor.rgbaColor(0,0, 0)
+        }
+
     val chartModel: AAChartModel by lazy {
         AAChartModel()
             .chartType(AAChartType.Line)
             .backgroundColor(R.color.surfaceColor)
-            .title("")
-            .titleStyle(AAStyle().color((
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-                        AAColor.rgbaColor(255,255, 255)
-                    } else {
-                        AAColor.rgbaColor(0,0, 0)
-                    })))
-            .dataLabelsEnabled(true)
             .yAxisTitle("")
-
+            .axesTextColor(textsColor)
+            .dataLabelsEnabled(true)
+            .dataLabelsStyle(AAStyle().color(textsColor))
             .series(arrayOf(
-                // solves
-                AASeriesElement().name("Solves").data(session.solves.mapIndexed { index, solve -> arrayOf(index + 1, solve.time.toDouble()) }.toTypedArray()).color(AAColor.rgbaColor(249, 168, 37)).marker(AAMarker().symbol("circle").radius(markerRadius)),
-
-                // avg5
-                AASeriesElement().name("Avg5").data(session.averagesFive.mapIndexed { index, solveTime -> arrayOf(index + 5, solveTime.toDouble()) }.toTypedArray()).color(AAColor.rgbaColor(41, 182, 246)).marker(AAMarker().symbol("diamond").radius(markerRadius)),
-
-                // avg12
-                AASeriesElement().name("Avg12").data(session.averagesTwelve.mapIndexed { index, solveTime -> arrayOf(index + 12, solveTime.toDouble()) }.toTypedArray()).color(AAColor.Magenta).marker(AAMarker().symbol("square").radius(markerRadius - 1.0f)),
+                AASeriesElement().name("Solves").data(session.solves.mapIndexed { index, solve -> arrayOf(index + 1, solve.time.toDouble()) }
+                    .toTypedArray()).color(AAColor.rgbaColor(249, 168, 37)).marker(AAMarker().symbol("circle").radius(markerRadius)),
+                AASeriesElement().name("Avg5").data(session.averagesFive.mapIndexed { index, solveTime -> arrayOf(index + 5, solveTime.toDouble()) }
+                    .toTypedArray()).color(AAColor.rgbaColor(41, 182, 246)).marker(AAMarker().symbol("diamond").radius(markerRadius)),
+                AASeriesElement().name("Avg12").data(session.averagesTwelve.mapIndexed { index, solveTime -> arrayOf(index + 12, solveTime.toDouble()) }
+                    .toTypedArray()).color(AAColor.Magenta).marker(AAMarker().symbol("square").radius(markerRadius - 1.0f)),
             ))
     }
 
 
     companion object
     {
-        const val markerRadius: Float = 5.0f
+        const val markerRadius: Float = 4.5f
     }
 }

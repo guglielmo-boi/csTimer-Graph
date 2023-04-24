@@ -30,7 +30,7 @@ class MainActivityViewModel(private val sharedPreferences: SharedPreferences, ap
         val darkThemePreference = sharedPreferences.getInt(getApplication<Application?>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.DARK_THEME.ordinal)
         val homeScreenPreference = sharedPreferences.getInt(getApplication<Application?>().applicationContext.getString(R.string.home_screen_preference_key), HomeScreenPreference.IMPORT_SESSION.ordinal)
 
-        with (sharedPreferences.edit()) {
+        with(sharedPreferences.edit()) {
             putInt(getApplication<Application?>().applicationContext.getString(R.string.dark_theme_preference_key), darkThemePreference)
             putInt(getApplication<Application?>().applicationContext.getString(R.string.home_screen_preference_key), homeScreenPreference)
             apply()

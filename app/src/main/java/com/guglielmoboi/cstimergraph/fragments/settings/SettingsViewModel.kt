@@ -47,12 +47,14 @@ class SettingsViewModel(private val sharedPreferences: SharedPreferences, applic
                 putInt(getApplication<Application?>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.DARK_THEME.ordinal)
                 apply()
             }
+
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
             with(sharedPreferences.edit()) {
                 putInt(getApplication<Application?>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.LIGHT_THEME.ordinal)
                 apply()
             }
+
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }

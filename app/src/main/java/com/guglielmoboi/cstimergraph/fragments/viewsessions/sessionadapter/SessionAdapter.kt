@@ -54,7 +54,7 @@ class SessionAdapter(private val context: Context, private val sessionListener: 
 
     fun setSessionItemChecked(id: Long) {
         getSessionItemIndexed(id)?.apply {
-            second.checked = !second.checked
+            second.isSelected = !second.isSelected
             notifyItemChanged(first)
         }
     }
@@ -89,7 +89,7 @@ class SessionAdapter(private val context: Context, private val sessionListener: 
                 val sessionItem = getItem(position) as DataItem.SessionItem
                 holder.bind(sessionItem.session, sessionListener)
 
-                if(sessionItem.checked) {
+                if(sessionItem.isSelected) {
                     holder.itemView.findViewById<View>(R.id.sessionItem).setBackgroundColor(getColor(context, R.color.primaryTransparentColor))
                     holder.itemView.findViewById<View>(R.id.sessionItemPadding).setBackgroundColor(getColor(context, R.color.primaryTransparentColor))
                 } else {
