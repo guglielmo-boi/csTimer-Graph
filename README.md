@@ -3,12 +3,14 @@
   <img src="https://play-lh.googleusercontent.com/4s7zvRkpPLEPUB2W_QYzqSTGBqcwGo84kLst5skKeoAQ66-90ykoBLnB-Q77bnLun40=w240-h480-rw"/>
 </p>
 
-<a href="https://play.google.com/store/apps/details?id=com.guglielmoboi.cstimergraph" target="_blank">
-  <img alt="Get it on Google Play"
-       src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
-</a>
+csTimer Graph is a Kotlin Android application which saves speedcubing sessions data from cstimer.net and plots their graphs.
 
-csTimer Graph is a Kotlin Android application which saves speedcubing sessions data from csTimer.net and plots their graphs.
+<p align="center">
+  <a href="https://play.google.com/store/apps/details?id=com.guglielmoboi.cstimergraph" target="_blank">
+    <img alt="Get it on Google Play"
+        src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" height="60"/>
+  </a>
+</p>
 
 # License (GNU GPLv3)
 
