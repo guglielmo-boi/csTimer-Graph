@@ -15,33 +15,37 @@
 //    You should have received a copy of the GNU General Public License
 //    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.
 
-package com.guglielmoboi.cstimergraph.database.session
+package com.guglielmoboi.cstimergraph.database.solves
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "sessions_table")
-data class SessionEntity
+@Entity(tableName = "solves_table")
+data class SolveEntity
     (
         @PrimaryKey(autoGenerate = true)
-        var sessionId: Long = 0L,
+        var solveId: Long = 0L,
 
-        @ColumnInfo(name = "name")
-        val name: String,
+        @ColumnInfo(name = "solve_index")
+        val solveIndex: Int,
 
-        @ColumnInfo(name = "start_date_time")
-        val startDateTime: String,
+        @ColumnInfo(name = "number")
+        val number: Int,
 
-        @ColumnInfo(name = "end_date_time")
-        val endDateTime: String,
+        @ColumnInfo(name = "time_string")
+        val timeStr: String,
 
-        @ColumnInfo(name = "first_solve_index")
-        val firstSolveIndex: Int,
+        @ColumnInfo(name = "time")
+        val time: String,
 
-        @ColumnInfo(name = "last_solve_index")
-        val lastSolveIndex: Int,
+        @ColumnInfo(name = "scramble")
+        val scramble: String,
 
-        @ColumnInfo(name = "size")
-        val size: Int
+        @ColumnInfo(name = "comment")
+        val comment: String,
+
+        @ColumnInfo(name = "date_time")
+        val dateTime: String,
     )
+

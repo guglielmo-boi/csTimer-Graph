@@ -18,10 +18,10 @@
 package com.guglielmoboi.cstimergraph.database.repository
 
 import android.app.Application
-import com.guglielmoboi.cstimergraph.database.session.SessionEntity
-import com.guglielmoboi.cstimergraph.database.session.SessionsDatabase
-import com.guglielmoboi.cstimergraph.database.solve.SolveEntity
-import com.guglielmoboi.cstimergraph.database.solve.SolvesDatabase
+import com.guglielmoboi.cstimergraph.database.sessions.SessionEntity
+import com.guglielmoboi.cstimergraph.database.sessions.SessionsDatabase
+import com.guglielmoboi.cstimergraph.database.solves.SolveEntity
+import com.guglielmoboi.cstimergraph.database.solves.SolvesDatabase
 import com.guglielmoboi.cstimergraph.solvedata.session.Session
 import com.guglielmoboi.cstimergraph.solvedata.solve.Solve
 import kotlinx.coroutines.Dispatchers

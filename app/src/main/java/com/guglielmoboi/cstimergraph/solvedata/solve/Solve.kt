@@ -17,7 +17,7 @@
 
 package com.guglielmoboi.cstimergraph.solvedata.solve
 
-import com.guglielmoboi.cstimergraph.database.solve.SolveEntity
+import com.guglielmoboi.cstimergraph.database.solves.SolveEntity
 import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime
 
 data class Solve

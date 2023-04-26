@@ -26,7 +26,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.NavController
 import com.guglielmoboi.cstimergraph.database.repository.Repository
-import com.guglielmoboi.cstimergraph.database.session.SessionEntity
+import com.guglielmoboi.cstimergraph.database.sessions.SessionEntity
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.DeleteSessionsResult
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.util.SessionClickMode
 import com.guglielmoboi.cstimergraph.solvedata.datetime.DateTime

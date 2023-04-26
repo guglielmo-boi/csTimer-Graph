@@ -15,7 +15,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.
 
-package com.guglielmoboi.cstimergraph.database.session
+package com.guglielmoboi.cstimergraph.database.sessions
 
 import androidx.room.Dao
 import androidx.room.Insert

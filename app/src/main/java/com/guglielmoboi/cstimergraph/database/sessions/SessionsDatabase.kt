@@ -15,29 +15,29 @@
 //    You should have received a copy of the GNU General Public License
 //    along with csTimer Graph.  If not, see https://www.gnu.org/licenses/.
 
-package com.guglielmoboi.cstimergraph.database.solve
+package com.guglielmoboi.cstimergraph.database.sessions
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [SolveEntity::class], version = 3, exportSchema = false)
-abstract class SolvesDatabase : RoomDatabase()
+@Database(entities = [SessionEntity::class], version = 3, exportSchema = false)
+abstract class SessionsDatabase : RoomDatabase()
 {
-    abstract val solvesDao: SolvesDao
+    abstract val sessionsDao: SessionsDao
 
     companion object
     {
         @Volatile
-        private var INSTANCE: SolvesDatabase? = null
+        private var INSTANCE: SessionsDatabase? = null
 
-        fun getInstance(context: Context): SolvesDatabase {
+        fun getInstance(context: Context): SessionsDatabase {
             synchronized(this) {
                 var instance = INSTANCE
 
                 if(instance == null) {
-                    instance = Room.databaseBuilder(context.applicationContext, SolvesDatabase::class.java, "solves_database")
+                    instance = Room.databaseBuilder(context.applicationContext, SessionsDatabase::class.java, "sessions_database")
                                    .fallbackToDestructiveMigration().build()
 
                     INSTANCE = instance

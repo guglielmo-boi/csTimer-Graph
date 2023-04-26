@@ -17,7 +17,7 @@
 
 package com.guglielmoboi.cstimergraph.solvedata.session
 
-import com.guglielmoboi.cstimergraph.database.session.SessionEntity
+import com.guglielmoboi.cstimergraph.database.sessions.SessionEntity
 import com.guglielmoboi.cstimergraph.solvedata.solve.Solve
 import com.guglielmoboi.cstimergraph.solvedata.solve.SolveTime
 import com.guglielmoboi.cstimergraph.solvedata.solve.getMeanFromSolvesTimes
