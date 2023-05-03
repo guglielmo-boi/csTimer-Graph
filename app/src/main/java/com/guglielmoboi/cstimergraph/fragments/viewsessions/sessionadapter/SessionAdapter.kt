@@ -25,7 +25,6 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.guglielmoboi.cstimergraph.R
-import com.guglielmoboi.cstimergraph.databinding.FragmentViewSessionsBinding
 import com.guglielmoboi.cstimergraph.databinding.ListItemSessionBinding
 import com.guglielmoboi.cstimergraph.fragments.viewsessions.sessionadapter.sessionlistener.SessionListener
 import com.guglielmoboi.cstimergraph.solvedata.session.Session
