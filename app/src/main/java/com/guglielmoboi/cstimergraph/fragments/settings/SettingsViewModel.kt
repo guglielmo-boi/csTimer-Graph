@@ -44,14 +44,14 @@ class SettingsViewModel(private val sharedPreferences: SharedPreferences, applic
     fun setDarkTheme(isChecked: Boolean) {
         if(isChecked) {
             with(sharedPreferences.edit()) {
-                putInt(getApplication<Application?>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.DARK_THEME.ordinal)
+                putInt(getApplication<Application>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.DARK_THEME.ordinal)
                 apply()
             }
 
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
             with(sharedPreferences.edit()) {
-                putInt(getApplication<Application?>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.LIGHT_THEME.ordinal)
+                putInt(getApplication<Application>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.LIGHT_THEME.ordinal)
                 apply()
             }
 
@@ -62,7 +62,7 @@ class SettingsViewModel(private val sharedPreferences: SharedPreferences, applic
 
     fun setStartDestination(position: Int) {
         with(sharedPreferences.edit()) {
-            putInt(getApplication<Application?>().applicationContext.getString(R.string.home_screen_preference_key), position)
+            putInt(getApplication<Application>().applicationContext.getString(R.string.home_screen_preference_key), position)
             apply()
         }
     }

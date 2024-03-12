@@ -29,7 +29,7 @@ import com.guglielmoboi.cstimergraph.preferences.HomeScreenPreference
 class LaunchViewModel(private val sharedPreferences: SharedPreferences, application: Application) : AndroidViewModel(application)
 {
     fun setDarkTheme() {
-        when(sharedPreferences.getInt(getApplication<Application?>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.LIGHT_THEME.ordinal)) {
+        when(sharedPreferences.getInt(getApplication<Application>().applicationContext.getString(R.string.dark_theme_preference_key), DarkThemePreference.LIGHT_THEME.ordinal)) {
             DarkThemePreference.LIGHT_THEME.ordinal -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             DarkThemePreference.DARK_THEME.ordinal -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
@@ -39,7 +39,7 @@ class LaunchViewModel(private val sharedPreferences: SharedPreferences, applicat
 
     fun navigate(navController: NavController) {
         navController.navigate(
-            when(sharedPreferences.getInt(getApplication<Application?>().applicationContext.getString(R.string.home_screen_preference_key), HomeScreenPreference.IMPORT_SESSION.ordinal)) {
+            when(sharedPreferences.getInt(getApplication<Application>().applicationContext.getString(R.string.home_screen_preference_key), HomeScreenPreference.IMPORT_SESSION.ordinal)) {
                 HomeScreenPreference.IMPORT_SESSION.ordinal -> LaunchFragmentDirections.actionLaunchFragmentToImportSessionFragment()
                 HomeScreenPreference.VIEW_SESSIONS.ordinal -> LaunchFragmentDirections.actionLaunchFragmentToViewSessionsFragment()
                 HomeScreenPreference.ABOUT.ordinal -> LaunchFragmentDirections.actionLaunchFragmentToAboutFragment()

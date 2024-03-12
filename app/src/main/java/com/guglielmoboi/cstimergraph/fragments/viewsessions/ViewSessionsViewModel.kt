@@ -225,19 +225,19 @@ class ViewSessionsViewModel(private val repository: Repository, application: App
         // convert the file content to solves through its uri
         try {
             val firstSolveIndex = _maxIndex.value?.plus(1) ?: throw IndexOutOfBoundsException("Invalid database index.")
-            val solves = SolvesParser.parse(getApplication<Application?>().applicationContext, uri, firstSolveIndex)
+            val solves = SolvesParser.parse(getApplication<Application>().applicationContext, uri, firstSolveIndex)
 
             mainScope.launch {
                 saveSession(solves, navController)
             }
         } catch(noSuchElementException: NoSuchElementException) {
-            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, imported file is not valid.", Toast.LENGTH_LONG).show()
+            Toast.makeText(getApplication<Application>().applicationContext, "Import session failed, imported file is not valid.", Toast.LENGTH_LONG).show()
         } catch(numberFormatException: NumberFormatException) {
-            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unexpected file formatting.", Toast.LENGTH_LONG).show()
+            Toast.makeText(getApplication<Application>().applicationContext, "Import session failed, unexpected file formatting.", Toast.LENGTH_LONG).show()
         } catch(indexOutOfBoundException: IndexOutOfBoundsException) {
-            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, database integrity compromised.", Toast.LENGTH_LONG).show()
+            Toast.makeText(getApplication<Application>().applicationContext, "Import session failed, database integrity compromised.", Toast.LENGTH_LONG).show()
         } catch(exception: Exception) {
-            Toast.makeText(getApplication<Application?>().applicationContext, "Import session failed, unknown error occurred.", Toast.LENGTH_LONG).show()
+            Toast.makeText(getApplication<Application>().applicationContext, "Import session failed, unknown error occurred.", Toast.LENGTH_LONG).show()
         }
     }
 

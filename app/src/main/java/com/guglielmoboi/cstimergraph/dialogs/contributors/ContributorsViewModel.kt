@@ -63,7 +63,7 @@ class ContributorsViewModel(application: Application) : AndroidViewModel(applica
 
     fun emailDeveloper(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:${getApplication<Application?>().applicationContext.getString(R.string.developer_email_address)}")
+            data = Uri.parse("mailto:${getApplication<Application>().applicationContext.getString(R.string.developer_email_address)}")
             putExtra(Intent.EXTRA_SUBJECT, "csTimer Graph")
         }
 
@@ -81,7 +81,7 @@ class ContributorsViewModel(application: Application) : AndroidViewModel(applica
 
     fun viewDeveloperInstagram(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.developer_instagram_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.developer_instagram_uri))
         }
 
         resultLauncher.launch(intent)
@@ -98,7 +98,7 @@ class ContributorsViewModel(application: Application) : AndroidViewModel(applica
 
     fun viewDeveloperGithub(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.developer_github_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.developer_github_uri))
         }
 
         resultLauncher.launch(intent)
@@ -115,7 +115,7 @@ class ContributorsViewModel(application: Application) : AndroidViewModel(applica
 
     fun viewDeveloperStackoverflow(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.developer_stackoverflow_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.developer_stackoverflow_uri))
         }
 
         resultLauncher.launch(intent)
@@ -132,7 +132,7 @@ class ContributorsViewModel(application: Application) : AndroidViewModel(applica
 
     fun emailDesigner(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:${getApplication<Application?>().applicationContext.getString(R.string.designer_email_address)}")
+            data = Uri.parse("mailto:${getApplication<Application>().applicationContext.getString(R.string.designer_email_address)}")
             putExtra(Intent.EXTRA_SUBJECT, "csTimer Graph")
         }
 
@@ -150,7 +150,7 @@ class ContributorsViewModel(application: Application) : AndroidViewModel(applica
 
     fun viewDesignerInstagram(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.designer_instagram_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.designer_instagram_uri))
         }
 
         resultLauncher.launch(intent)

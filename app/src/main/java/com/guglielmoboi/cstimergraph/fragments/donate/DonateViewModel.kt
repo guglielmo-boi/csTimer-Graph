@@ -39,6 +39,6 @@ class DonateViewModel(application: Application) : AndroidViewModel(application)
     }
 
     fun donate() {
-        Toast.makeText(getApplication<Application?>().applicationContext, "Donations are not available yet.", Toast.LENGTH_LONG).show()
+        Toast.makeText(getApplication<Application>().applicationContext, "Donations are not available yet.", Toast.LENGTH_LONG).show()
     }
 }

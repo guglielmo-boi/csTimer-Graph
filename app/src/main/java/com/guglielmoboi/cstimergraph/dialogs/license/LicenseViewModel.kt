@@ -42,7 +42,7 @@ class LicenseViewModel(application: Application) : AndroidViewModel(application)
 
     fun viewLicense(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.license_gnu_gpl_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.license_gnu_gpl_uri))
         }
 
         resultLauncher.launch(intent)

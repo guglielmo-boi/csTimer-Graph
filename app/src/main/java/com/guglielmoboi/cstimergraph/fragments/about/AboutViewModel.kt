@@ -63,7 +63,7 @@ class AboutViewModel(application: Application) : AndroidViewModel(application)
 
     fun rateApp(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.rate_app_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.rate_app_uri))
         }
 
         resultLauncher.launch(intent)
@@ -80,8 +80,8 @@ class AboutViewModel(application: Application) : AndroidViewModel(application)
 
     fun contactUs(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:${getApplication<Application?>().applicationContext.getString(R.string.contact_us_email_address)}")
-            putExtra(Intent.EXTRA_SUBJECT, getApplication<Application?>().applicationContext.getString(R.string.contact_us_subject))
+            data = Uri.parse("mailto:${getApplication<Application>().applicationContext.getString(R.string.contact_us_email_address)}")
+            putExtra(Intent.EXTRA_SUBJECT, getApplication<Application>().applicationContext.getString(R.string.contact_us_subject))
         }
 
         resultLauncher.launch(intent)
@@ -98,7 +98,7 @@ class AboutViewModel(application: Application) : AndroidViewModel(application)
 
     fun feedback(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.feedback_google_form_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.feedback_google_form_uri))
         }
 
         resultLauncher.launch(intent)
@@ -124,7 +124,7 @@ class AboutViewModel(application: Application) : AndroidViewModel(application)
 
     fun viewSourceCode(resultLauncher: ActivityResultLauncher<Intent>) {
         val intent = Intent(Intent.ACTION_VIEW).apply {
-            data = Uri.parse(getApplication<Application?>().applicationContext.getString(R.string.source_code_github_uri))
+            data = Uri.parse(getApplication<Application>().applicationContext.getString(R.string.source_code_github_uri))
         }
 
         resultLauncher.launch(intent)
